@@ -1,0 +1,762 @@
+-- Logs begin at Sun 2018-11-04 02:57:26 UTC, end at Sun 2018-11-04 03:02:14 UTC. --
+Nov 04 02:57:36 master-centos systemd[1]: Started kubelet: The Kubernetes Node Agent.
+-- Subject: Unit kubelet.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit kubelet.service has finished starting up.
+-- 
+-- The start-up result is done.
+Nov 04 02:57:36 master-centos systemd[1]: Starting kubelet: The Kubernetes Node Agent...
+-- Subject: Unit kubelet.service has begun start-up
+-- Defined-By: systemd
+-- Support: http://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit kubelet.service has begun starting up.
+Nov 04 02:57:40 master-centos kubelet[394]: Flag --cgroup-driver has been deprecated, This parameter should be set via the config file specified by the Kubelet's --config flag. See https://kubernetes.io/docs/tasks/administer-cluster/kubelet-config-file/ for more information.
+Nov 04 02:57:40 master-centos kubelet[394]: Flag --cgroup-driver has been deprecated, This parameter should be set via the config file specified by the Kubelet's --config flag. See https://kubernetes.io/docs/tasks/administer-cluster/kubelet-config-file/ for more information.
+Nov 04 02:57:41 master-centos kubelet[394]: I1104 02:57:41.007030     394 server.go:408] Version: v1.12.2
+Nov 04 02:57:41 master-centos kubelet[394]: I1104 02:57:41.007485     394 plugins.go:99] No cloud provider specified.
+Nov 04 02:57:41 master-centos kubelet[394]: I1104 02:57:41.020903     394 certificate_store.go:131] Loading cert/key pair from "/var/lib/kubelet/pki/kubelet-client-current.pem".
+Nov 04 02:57:44 master-centos kubelet[394]: I1104 02:57:44.845574     394 server.go:667] --cgroups-per-qos enabled, but --cgroup-root was not specified.  defaulting to /
+Nov 04 02:57:44 master-centos kubelet[394]: I1104 02:57:44.847280     394 container_manager_linux.go:247] container manager verified user specified cgroup-root exists: []
+Nov 04 02:57:44 master-centos kubelet[394]: I1104 02:57:44.847374     394 container_manager_linux.go:252] Creating Container Manager object based on Node Config: {RuntimeCgroupsName: SystemCgroupsName: KubeletCgroupsName: ContainerRuntime:docker CgroupsPerQOS:true CgroupRoot:/ CgroupDriver:cgroupfs KubeletRootDir:/var/lib/kubelet ProtectKernelDefaults:false NodeAllocatableConfig:{KubeReservedCgroupName: SystemReservedCgroupName: EnforceNodeAllocatable:map[pods:{}] KubeReserved:map[] SystemReserved:map[] HardEvictionThresholds:[{Signal:imagefs.available Operator:LessThan Value:{Quantity:<nil> Percentage:0.15} GracePeriod:0s MinReclaim:<nil>} {Signal:memory.available Operator:LessThan Value:{Quantity:100Mi Percentage:0} GracePeriod:0s MinReclaim:<nil>} {Signal:nodefs.available Operator:LessThan Value:{Quantity:<nil> Percentage:0.1} GracePeriod:0s MinReclaim:<nil>} {Signal:nodefs.inodesFree Operator:LessThan Value:{Quantity:<nil> Percentage:0.05} GracePeriod:0s MinReclaim:<nil>}]} QOSReserved:map[] ExperimentalCPUManagerPolicy:none ExperimentalCPUManagerReconcilePeriod:10s ExperimentalPodPidsLimit:-1 EnforceCPULimits:true CPUCFSQuotaPeriod:100ms}
+Nov 04 02:57:44 master-centos kubelet[394]: I1104 02:57:44.847528     394 container_manager_linux.go:271] Creating device plugin manager: true
+Nov 04 02:57:44 master-centos kubelet[394]: I1104 02:57:44.847697     394 state_mem.go:36] [cpumanager] initializing new in-memory state store
+Nov 04 02:57:44 master-centos kubelet[394]: I1104 02:57:44.848564     394 state_mem.go:84] [cpumanager] updated default cpuset: ""
+Nov 04 02:57:44 master-centos kubelet[394]: I1104 02:57:44.848581     394 state_mem.go:92] [cpumanager] updated cpuset assignments: "map[]"
+Nov 04 02:57:44 master-centos kubelet[394]: I1104 02:57:44.851009     394 kubelet.go:279] Adding pod path: /etc/kubernetes/manifests
+Nov 04 02:57:44 master-centos kubelet[394]: I1104 02:57:44.851078     394 kubelet.go:304] Watching apiserver
+Nov 04 02:57:44 master-centos kubelet[394]: E1104 02:57:44.854395     394 reflector.go:134] k8s.io/kubernetes/pkg/kubelet/kubelet.go:442: Failed to list *v1.Service: Get https://10.142.0.2:6443/api/v1/services?limit=500&resourceVersion=0: dial tcp 10.142.0.2:6443: connect: connection refused
+Nov 04 02:57:44 master-centos kubelet[394]: E1104 02:57:44.854478     394 reflector.go:134] k8s.io/kubernetes/pkg/kubelet/kubelet.go:451: Failed to list *v1.Node: Get https://10.142.0.2:6443/api/v1/nodes?fieldSelector=metadata.name%3Dmaster-centos&limit=500&resourceVersion=0: dial tcp 10.142.0.2:6443: connect: connection refused
+Nov 04 02:57:44 master-centos kubelet[394]: E1104 02:57:44.854540     394 reflector.go:134] k8s.io/kubernetes/pkg/kubelet/config/apiserver.go:47: Failed to list *v1.Pod: Get https://10.142.0.2:6443/api/v1/pods?fieldSelector=spec.nodeName%3Dmaster-centos&limit=500&resourceVersion=0: dial tcp 10.142.0.2:6443: connect: connection refused
+Nov 04 02:57:44 master-centos kubelet[394]: I1104 02:57:44.856557     394 client.go:75] Connecting to docker on unix:///var/run/docker.sock
+Nov 04 02:57:44 master-centos kubelet[394]: I1104 02:57:44.856614     394 client.go:104] Start docker client with request timeout=2m0s
+Nov 04 02:57:44 master-centos kubelet[394]: W1104 02:57:44.858570     394 docker_service.go:540] Hairpin mode set to "promiscuous-bridge" but kubenet is not enabled, falling back to "hairpin-veth"
+Nov 04 02:57:44 master-centos kubelet[394]: I1104 02:57:44.858597     394 docker_service.go:236] Hairpin mode set to "hairpin-veth"
+Nov 04 02:57:44 master-centos kubelet[394]: W1104 02:57:44.862883     394 hostport_manager.go:68] The binary conntrack is not installed, this can cause failures in network connection cleanup.
+Nov 04 02:57:44 master-centos kubelet[394]: I1104 02:57:44.863157     394 docker_service.go:251] Docker cri networking managed by cni
+Nov 04 02:57:44 master-centos kubelet[394]: I1104 02:57:44.875534     394 docker_service.go:256] Docker Info: &{ID:EVYL:MEYH:GZKA:5QO5:5OI3:GAJW:32QC:NKUJ:U3CT:7JZL:FJTW:2IM7 Containers:13 ContainersRunning:11 ContainersPaused:0 ContainersStopped:2 Images:8 Driver:overlay2 DriverStatus:[[Backing Filesystem xfs] [Supports d_type true] [Native Overlay Diff true]] SystemStatus:[] Plugins:{Volume:[local] Network:[bridge host macvlan null overlay] Authorization:[] Log:[awslogs fluentd gcplogs gelf journald json-file logentries splunk syslog]} MemoryLimit:true SwapLimit:true KernelMemory:true CPUCfsPeriod:true CPUCfsQuota:true CPUShares:true CPUSet:true IPv4Forwarding:true BridgeNfIptables:true BridgeNfIP6tables:true Debug:false NFd:23 OomKillDisable:true NGoroutines:45 SystemTime:2018-11-04T02:57:44.865514547Z LoggingDriver:json-file CgroupDriver:cgroupfs NEventsListener:0 KernelVersion:3.10.0-862.14.4.el7.x86_64 OperatingSystem:CentOS Linux 7 (Core) OSType:linux Architecture:x86_64 IndexServerAddress:https://index.docker.io/v1/ RegistryConfig:0xc4208c92d0 NCPU:2 MemTotal:7673565184 GenericResources:[] DockerRootDir:/var/lib/docker HTTPProxy: HTTPSProxy: NoProxy: Name:master-centos Labels:[] ExperimentalBuild:false ServerVersion:18.06.1-ce ClusterStore: ClusterAdvertise: Runtimes:map[runc:{Path:docker-runc Args:[]}] DefaultRuntime:runc Swarm:{NodeID: NodeAddr: LocalNodeState:inactive ControlAvailable:false Error: RemoteManagers:[] Nodes:0 Managers:0 Cluster:<nil>} LiveRestoreEnabled:false Isolation: InitBinary:docker-init ContainerdCommit:{ID:468a545b9edcd5932818eb9de8e72413e616e86e Expected:468a545b9edcd5932818eb9de8e72413e616e86e} RuncCommit:{ID:69663f0bd4b60df09991c08812a60108003fa340 Expected:69663f0bd4b60df09991c08812a60108003fa340} InitCommit:{ID:fec3683 Expected:fec3683} SecurityOptions:[name=seccomp,profile=default]}
+Nov 04 02:57:44 master-centos kubelet[394]: I1104 02:57:44.875662     394 docker_service.go:269] Setting cgroupDriver to cgroupfs
+Nov 04 02:57:44 master-centos kubelet[394]: I1104 02:57:44.910749     394 kuberuntime_manager.go:197] Container runtime docker initialized, version: 18.06.1-ce, apiVersion: 1.38.0
+Nov 04 02:57:44 master-centos kubelet[394]: I1104 02:57:44.926968     394 server.go:1013] Started kubelet
+Nov 04 02:57:44 master-centos kubelet[394]: I1104 02:57:44.941231     394 fs_resource_analyzer.go:66] Starting FS ResourceAnalyzer
+Nov 04 02:57:44 master-centos kubelet[394]: I1104 02:57:44.941272     394 status_manager.go:152] Starting to sync pod status with apiserver
+Nov 04 02:57:44 master-centos kubelet[394]: I1104 02:57:44.941288     394 kubelet.go:1804] Starting kubelet main sync loop.
+Nov 04 02:57:44 master-centos kubelet[394]: I1104 02:57:44.941309     394 kubelet.go:1821] skipping pod synchronization - [container runtime is down PLEG is not healthy: pleg was last seen active 2562047h47m16.854775807s ago; threshold is 3m0s]
+Nov 04 02:57:44 master-centos kubelet[394]: I1104 02:57:44.956575     394 server.go:133] Starting to listen on 0.0.0.0:10250
+Nov 04 02:57:44 master-centos kubelet[394]: I1104 02:57:44.959836     394 server.go:318] Adding debug handlers to kubelet server.
+Nov 04 02:57:44 master-centos kubelet[394]: E1104 02:57:44.977646     394 event.go:212] Unable to write event: 'Post https://10.142.0.2:6443/api/v1/namespaces/default/events: dial tcp 10.142.0.2:6443: connect: connection refused' (may retry after sleeping)
+Nov 04 02:57:44 master-centos kubelet[394]: I1104 02:57:44.977714     394 volume_manager.go:248] Starting Kubelet Volume Manager
+Nov 04 02:57:44 master-centos kubelet[394]: E1104 02:57:44.977957     394 kubelet.go:1287] Image garbage collection failed once. Stats initialization may not have completed yet: failed to get imageFs info: unable to find data in memory cache
+Nov 04 02:57:44 master-centos kubelet[394]: I1104 02:57:44.978191     394 desired_state_of_world_populator.go:130] Desired state populator starts to run
+Nov 04 02:57:45 master-centos kubelet[394]: I1104 02:57:45.044622     394 kubelet.go:1821] skipping pod synchronization - [container runtime is down PLEG is not healthy: pleg was last seen active 2562047h47m16.854775807s ago; threshold is 3m0s]
+Nov 04 02:57:45 master-centos kubelet[394]: E1104 02:57:45.112304     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:45 master-centos kubelet[394]: I1104 02:57:45.119414     394 kubelet_node_status.go:276] Setting node annotation to enable volume controller attach/detach
+Nov 04 02:57:45 master-centos kubelet[394]: I1104 02:57:45.143117     394 kubelet_node_status.go:276] Setting node annotation to enable volume controller attach/detach
+Nov 04 02:57:45 master-centos kubelet[394]: I1104 02:57:45.145829     394 kubelet_node_status.go:70] Attempting to register node master-centos
+Nov 04 02:57:45 master-centos kubelet[394]: E1104 02:57:45.146387     394 kubelet_node_status.go:92] Unable to register node "master-centos" with API server: Post https://10.142.0.2:6443/api/v1/nodes: dial tcp 10.142.0.2:6443: connect: connection refused
+Nov 04 02:57:45 master-centos kubelet[394]: I1104 02:57:45.147270     394 cpu_manager.go:155] [cpumanager] starting with none policy
+Nov 04 02:57:45 master-centos kubelet[394]: I1104 02:57:45.147278     394 cpu_manager.go:156] [cpumanager] reconciling every 10s
+Nov 04 02:57:45 master-centos kubelet[394]: I1104 02:57:45.147284     394 policy_none.go:42] [cpumanager] none policy: Start
+Nov 04 02:57:45 master-centos kubelet[394]: E1104 02:57:45.180845     394 event.go:212] Unable to write event: 'Post https://10.142.0.2:6443/api/v1/namespaces/default/events: dial tcp 10.142.0.2:6443: connect: connection refused' (may retry after sleeping)
+Nov 04 02:57:45 master-centos kubelet[394]: E1104 02:57:45.205957     394 eviction_manager.go:243] eviction manager: failed to get get summary stats: failed to get node info: node "master-centos" not found
+Nov 04 02:57:45 master-centos kubelet[394]: E1104 02:57:45.215605     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:45 master-centos kubelet[394]: I1104 02:57:45.244961     394 kubelet.go:1821] skipping pod synchronization - [PLEG is not healthy: pleg was last seen active 2562047h47m16.854775807s ago; threshold is 3m0s]
+Nov 04 02:57:45 master-centos kubelet[394]: E1104 02:57:45.315896     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:45 master-centos kubelet[394]: W1104 02:57:45.342034     394 cni.go:293] CNI failed to retrieve network namespace path: Error: No such container: f3df8c7ae99da8cdac2adedfef55576f0b9bed6e84db4dd102684ba61d7715e5
+Nov 04 02:57:45 master-centos kubelet[394]: I1104 02:57:45.346935     394 kubelet_node_status.go:276] Setting node annotation to enable volume controller attach/detach
+Nov 04 02:57:45 master-centos kubelet[394]: I1104 02:57:45.351248     394 kubelet_node_status.go:70] Attempting to register node master-centos
+Nov 04 02:57:45 master-centos kubelet[394]: E1104 02:57:45.351703     394 kubelet_node_status.go:92] Unable to register node "master-centos" with API server: Post https://10.142.0.2:6443/api/v1/nodes: dial tcp 10.142.0.2:6443: connect: connection refused
+Nov 04 02:57:45 master-centos kubelet[394]: E1104 02:57:45.415982     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:45 master-centos kubelet[394]: E1104 02:57:45.516409     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:45 master-centos kubelet[394]: W1104 02:57:45.583275     394 cni.go:293] CNI failed to retrieve network namespace path: Error: No such container: f269809d42063215b17722ad3c54a690d6b2f4926a45de0578ae2dfb22ec41d6
+Nov 04 02:57:45 master-centos kubelet[394]: W1104 02:57:45.608285     394 cni.go:293] CNI failed to retrieve network namespace path: Error: No such container: eed46cfe121102f198538bc2b31239208da7436de30574ac4d5827ed51bfa975
+Nov 04 02:57:45 master-centos kubelet[394]: E1104 02:57:45.616570     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:45 master-centos kubelet[394]: W1104 02:57:45.631093     394 cni.go:293] CNI failed to retrieve network namespace path: Error: No such container: e8fedaba7eeb92e35ca0293481fe55f3eef7920e401cee2c71a2ed656ce591a9
+Nov 04 02:57:45 master-centos kubelet[394]: W1104 02:57:45.645197     394 pod_container_deletor.go:75] Container "044f38608b7cc9e7a4781e2ababf68213d0f3d7f625655dd33764bf732da2cc6" not found in pod's containers
+Nov 04 02:57:45 master-centos kubelet[394]: I1104 02:57:45.645337     394 kubelet_node_status.go:276] Setting node annotation to enable volume controller attach/detach
+Nov 04 02:57:45 master-centos kubelet[394]: I1104 02:57:45.652932     394 kubelet_node_status.go:276] Setting node annotation to enable volume controller attach/detach
+Nov 04 02:57:45 master-centos kubelet[394]: I1104 02:57:45.654689     394 kubelet_node_status.go:276] Setting node annotation to enable volume controller attach/detach
+Nov 04 02:57:45 master-centos kubelet[394]: W1104 02:57:45.656885     394 cni.go:293] CNI failed to retrieve network namespace path: Error: No such container: e09983f66d691012abd27d516cdae19a38538b55187793adda6e1320beb9d685
+Nov 04 02:57:45 master-centos kubelet[394]: I1104 02:57:45.661793     394 kubelet_node_status.go:276] Setting node annotation to enable volume controller attach/detach
+Nov 04 02:57:45 master-centos kubelet[394]: I1104 02:57:45.662281     394 kubelet_node_status.go:276] Setting node annotation to enable volume controller attach/detach
+Nov 04 02:57:45 master-centos kubelet[394]: W1104 02:57:45.662687     394 status_manager.go:485] Failed to get status for pod "etcd-master-centos_kube-system(48889bdd121b4da9b8018bda503e06dc)": Get https://10.142.0.2:6443/api/v1/namespaces/kube-system/pods/etcd-master-centos: dial tcp 10.142.0.2:6443: connect: connection refused
+Nov 04 02:57:45 master-centos kubelet[394]: W1104 02:57:45.683643     394 status_manager.go:485] Failed to get status for pod "kube-apiserver-master-centos_kube-system(71d816856ea6e920781f7edf59100b9d)": Get https://10.142.0.2:6443/api/v1/namespaces/kube-system/pods/kube-apiserver-master-centos: dial tcp 10.142.0.2:6443: connect: connection refused
+Nov 04 02:57:45 master-centos kubelet[394]: I1104 02:57:45.686087     394 kubelet_node_status.go:276] Setting node annotation to enable volume controller attach/detach
+Nov 04 02:57:45 master-centos kubelet[394]: I1104 02:57:45.686642     394 kubelet_node_status.go:276] Setting node annotation to enable volume controller attach/detach
+Nov 04 02:57:45 master-centos kubelet[394]: W1104 02:57:45.694533     394 status_manager.go:485] Failed to get status for pod "kube-controller-manager-master-centos_kube-system(309ba8fd17cb0652a8f90e12725f1edc)": Get https://10.142.0.2:6443/api/v1/namespaces/kube-system/pods/kube-controller-manager-master-centos: dial tcp 10.142.0.2:6443: connect: connection refused
+Nov 04 02:57:45 master-centos kubelet[394]: W1104 02:57:45.696851     394 pod_container_deletor.go:75] Container "0eeaa3614c0f5556976ea3691f43db2483683fafdb256b4719bc5d24fd28967a" not found in pod's containers
+Nov 04 02:57:45 master-centos kubelet[394]: W1104 02:57:45.696875     394 pod_container_deletor.go:75] Container "142f362e4431453acbce6419d0ed23db265dc8ced49494a43a38b6c5e9622e3f" not found in pod's containers
+Nov 04 02:57:45 master-centos kubelet[394]: W1104 02:57:45.696886     394 pod_container_deletor.go:75] Container "14833ff5f22a39c249cbff93d721c6d123e6de7f9eb1922a031a8838d4d57912" not found in pod's containers
+Nov 04 02:57:45 master-centos kubelet[394]: W1104 02:57:45.696896     394 pod_container_deletor.go:75] Container "1bfc278face9dec95697555c4b95c2c7717883c6ee60032f3a8e0a3d13c3f843" not found in pod's containers
+Nov 04 02:57:45 master-centos kubelet[394]: W1104 02:57:45.696905     394 pod_container_deletor.go:75] Container "21ff3e1e5743eac80f95555b8724bcff164ad3056c1fc09dc0716e8532978758" not found in pod's containers
+Nov 04 02:57:45 master-centos kubelet[394]: W1104 02:57:45.696915     394 pod_container_deletor.go:75] Container "3aa14e52d53ae306ba93a1d25bd920f1604f6a109b00e4dc4083eaab01487dea" not found in pod's containers
+Nov 04 02:57:45 master-centos kubelet[394]: W1104 02:57:45.696927     394 pod_container_deletor.go:75] Container "3de6be4e16ea5efce38521387044a70dd1dce4515d53e4ce49e6333e7fa47c75" not found in pod's containers
+Nov 04 02:57:45 master-centos kubelet[394]: W1104 02:57:45.696935     394 pod_container_deletor.go:75] Container "3ec8e443ba741e29dee494f0b9453acc55a13b54aa00002fac5ff79be5ef587d" not found in pod's containers
+Nov 04 02:57:45 master-centos kubelet[394]: W1104 02:57:45.696945     394 pod_container_deletor.go:75] Container "4c547e96e489723d696ba20b689052961220a255a72eb2e04097f1fb6a571ba4" not found in pod's containers
+Nov 04 02:57:45 master-centos kubelet[394]: W1104 02:57:45.696955     394 pod_container_deletor.go:75] Container "5b538a807949c803caa1ca96bc3f6b310d955770042cb6c2029d3b8af6e17377" not found in pod's containers
+Nov 04 02:57:45 master-centos kubelet[394]: W1104 02:57:45.696964     394 pod_container_deletor.go:75] Container "5e730f0ff41d5f62b7785ffe297fc56b86b85b3a2dc4a9752c03d4d268f5ca73" not found in pod's containers
+Nov 04 02:57:45 master-centos kubelet[394]: W1104 02:57:45.696973     394 pod_container_deletor.go:75] Container "649927ea2398d893d4a8f035938af1a927b3ffeabc2fb14fab8d1c1ee223b8c8" not found in pod's containers
+Nov 04 02:57:45 master-centos kubelet[394]: W1104 02:57:45.696984     394 pod_container_deletor.go:75] Container "68b4fdb1054e44d9ca81a54885c440cea8d503a01df9b296bc6391cfe8b19565" not found in pod's containers
+Nov 04 02:57:45 master-centos kubelet[394]: W1104 02:57:45.696993     394 pod_container_deletor.go:75] Container "72f903a06f25f505f46f2ddba03d2e71964304d6003d75f7f0214efffd57c736" not found in pod's containers
+Nov 04 02:57:45 master-centos kubelet[394]: W1104 02:57:45.697003     394 pod_container_deletor.go:75] Container "76717653d114c77601dbfcd03883571b92f9a28c24f4b58cd4ec00f7c00ce652" not found in pod's containers
+Nov 04 02:57:45 master-centos kubelet[394]: W1104 02:57:45.697012     394 pod_container_deletor.go:75] Container "898a15fbacce177a245b4e4b81ea09cfdbb1ea9350ae37cc77d54397d5266941" not found in pod's containers
+Nov 04 02:57:45 master-centos kubelet[394]: W1104 02:57:45.697023     394 pod_container_deletor.go:75] Container "8aed7827472d907d02a9442eae9054cb89e00ffa307d64a7443650765bbd2fe9" not found in pod's containers
+Nov 04 02:57:45 master-centos kubelet[394]: W1104 02:57:45.697032     394 pod_container_deletor.go:75] Container "914e486bc37938bb4daf509dbc76330e03b191753324f8a5cd334e2f3453a2d1" not found in pod's containers
+Nov 04 02:57:45 master-centos kubelet[394]: W1104 02:57:45.697042     394 pod_container_deletor.go:75] Container "9551b53a00944cdf40ed6878154724b857612ae01b0ee49643d4665ffc64e86c" not found in pod's containers
+Nov 04 02:57:45 master-centos kubelet[394]: W1104 02:57:45.697051     394 pod_container_deletor.go:75] Container "96fbd498af09fa86e284b908b4970013c8baad143813a73b10dc4b2f80a9fe32" not found in pod's containers
+Nov 04 02:57:45 master-centos kubelet[394]: W1104 02:57:45.697062     394 pod_container_deletor.go:75] Container "a0980ec65295cde12b9deb20720d1c269c033114ab921f017f235da371adecd7" not found in pod's containers
+Nov 04 02:57:45 master-centos kubelet[394]: W1104 02:57:45.697071     394 pod_container_deletor.go:75] Container "ac0b4218e6dfd74496ce94caf62dbe6cb8289e941904a02b0068971c30cf67c0" not found in pod's containers
+Nov 04 02:57:45 master-centos kubelet[394]: W1104 02:57:45.697082     394 pod_container_deletor.go:75] Container "d1f314eedbd192fae624cf67a9fc13c28abca22691459da020a623d4d5ef07d7" not found in pod's containers
+Nov 04 02:57:45 master-centos kubelet[394]: W1104 02:57:45.697092     394 pod_container_deletor.go:75] Container "d2dcedf6d6e7864b7ee9bbf62b4ce62382d2ee9e19054817e389dcff64c9e4a4" not found in pod's containers
+Nov 04 02:57:45 master-centos kubelet[394]: W1104 02:57:45.697102     394 pod_container_deletor.go:75] Container "daec78fff11b06286c7bb4fd2863e7346ceee1a2cde8e66bde5357efac7bee03" not found in pod's containers
+Nov 04 02:57:45 master-centos kubelet[394]: W1104 02:57:45.697111     394 pod_container_deletor.go:75] Container "de7eabc891a58a2456e3ac2e72615e0c206d9349cd5ed25963b330ad75320cb0" not found in pod's containers
+Nov 04 02:57:45 master-centos kubelet[394]: W1104 02:57:45.697121     394 pod_container_deletor.go:75] Container "e09983f66d691012abd27d516cdae19a38538b55187793adda6e1320beb9d685" not found in pod's containers
+Nov 04 02:57:45 master-centos kubelet[394]: W1104 02:57:45.697130     394 pod_container_deletor.go:75] Container "e8fedaba7eeb92e35ca0293481fe55f3eef7920e401cee2c71a2ed656ce591a9" not found in pod's containers
+Nov 04 02:57:45 master-centos kubelet[394]: W1104 02:57:45.697139     394 pod_container_deletor.go:75] Container "eed46cfe121102f198538bc2b31239208da7436de30574ac4d5827ed51bfa975" not found in pod's containers
+Nov 04 02:57:45 master-centos kubelet[394]: W1104 02:57:45.697148     394 pod_container_deletor.go:75] Container "f269809d42063215b17722ad3c54a690d6b2f4926a45de0578ae2dfb22ec41d6" not found in pod's containers
+Nov 04 02:57:45 master-centos kubelet[394]: W1104 02:57:45.697157     394 pod_container_deletor.go:75] Container "f3df8c7ae99da8cdac2adedfef55576f0b9bed6e84db4dd102684ba61d7715e5" not found in pod's containers
+Nov 04 02:57:45 master-centos kubelet[394]: W1104 02:57:45.697173     394 pod_container_deletor.go:75] Container "58f8541d22083e8b21e3681024553bcf4dbf205b80e7eb4f8f449883da33e0d4" not found in pod's containers
+Nov 04 02:57:45 master-centos kubelet[394]: W1104 02:57:45.697185     394 pod_container_deletor.go:75] Container "abe4ea9a8713684edfffcd39c50145a5071a9c4948ca17160596bd05cfb5b25e" not found in pod's containers
+Nov 04 02:57:45 master-centos kubelet[394]: I1104 02:57:45.697245     394 kubelet_node_status.go:276] Setting node annotation to enable volume controller attach/detach
+Nov 04 02:57:45 master-centos kubelet[394]: I1104 02:57:45.697563     394 kubelet_node_status.go:276] Setting node annotation to enable volume controller attach/detach
+Nov 04 02:57:45 master-centos kubelet[394]: I1104 02:57:45.707915     394 kubelet_node_status.go:276] Setting node annotation to enable volume controller attach/detach
+Nov 04 02:57:45 master-centos kubelet[394]: W1104 02:57:45.708786     394 status_manager.go:485] Failed to get status for pod "kube-scheduler-master-centos_kube-system(ee7b1077c61516320f4273309e9b4690)": Get https://10.142.0.2:6443/api/v1/namespaces/kube-system/pods/kube-scheduler-master-centos: dial tcp 10.142.0.2:6443: connect: connection refused
+Nov 04 02:57:45 master-centos kubelet[394]: W1104 02:57:45.708989     394 cni.go:293] CNI failed to retrieve network namespace path: Error: No such container: de7eabc891a58a2456e3ac2e72615e0c206d9349cd5ed25963b330ad75320cb0
+Nov 04 02:57:45 master-centos kubelet[394]: W1104 02:57:45.715191     394 pod_container_deletor.go:75] Container "44382229dbb3dcc19a5daaa23cb8f35bc6dbe69a7a0fa74bd9893b4037e24ecd" not found in pod's containers
+Nov 04 02:57:45 master-centos kubelet[394]: I1104 02:57:45.715275     394 kubelet_node_status.go:276] Setting node annotation to enable volume controller attach/detach
+Nov 04 02:57:45 master-centos kubelet[394]: I1104 02:57:45.717405     394 kubelet_node_status.go:276] Setting node annotation to enable volume controller attach/detach
+Nov 04 02:57:45 master-centos kubelet[394]: E1104 02:57:45.717970     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:45 master-centos kubelet[394]: I1104 02:57:45.718091     394 reconciler.go:207] operationExecutor.VerifyControllerAttachedVolume started for volume "etc-pki" (UniqueName: "kubernetes.io/host-path/309ba8fd17cb0652a8f90e12725f1edc-etc-pki") pod "kube-controller-manager-master-centos" (UID: "309ba8fd17cb0652a8f90e12725f1edc")
+Nov 04 02:57:45 master-centos kubelet[394]: I1104 02:57:45.718126     394 reconciler.go:207] operationExecutor.VerifyControllerAttachedVolume started for volume "k8s-certs" (UniqueName: "kubernetes.io/host-path/309ba8fd17cb0652a8f90e12725f1edc-k8s-certs") pod "kube-controller-manager-master-centos" (UID: "309ba8fd17cb0652a8f90e12725f1edc")
+Nov 04 02:57:45 master-centos kubelet[394]: I1104 02:57:45.718154     394 reconciler.go:207] operationExecutor.VerifyControllerAttachedVolume started for volume "etcd-data" (UniqueName: "kubernetes.io/host-path/48889bdd121b4da9b8018bda503e06dc-etcd-data") pod "etcd-master-centos" (UID: "48889bdd121b4da9b8018bda503e06dc")
+Nov 04 02:57:45 master-centos kubelet[394]: I1104 02:57:45.718182     394 reconciler.go:207] operationExecutor.VerifyControllerAttachedVolume started for volume "etc-pki" (UniqueName: "kubernetes.io/host-path/71d816856ea6e920781f7edf59100b9d-etc-pki") pod "kube-apiserver-master-centos" (UID: "71d816856ea6e920781f7edf59100b9d")
+Nov 04 02:57:45 master-centos kubelet[394]: I1104 02:57:45.718245     394 reconciler.go:207] operationExecutor.VerifyControllerAttachedVolume started for volume "ca-certs" (UniqueName: "kubernetes.io/host-path/71d816856ea6e920781f7edf59100b9d-ca-certs") pod "kube-apiserver-master-centos" (UID: "71d816856ea6e920781f7edf59100b9d")
+Nov 04 02:57:45 master-centos kubelet[394]: I1104 02:57:45.718284     394 reconciler.go:207] operationExecutor.VerifyControllerAttachedVolume started for volume "ca-certs" (UniqueName: "kubernetes.io/host-path/309ba8fd17cb0652a8f90e12725f1edc-ca-certs") pod "kube-controller-manager-master-centos" (UID: "309ba8fd17cb0652a8f90e12725f1edc")
+Nov 04 02:57:45 master-centos kubelet[394]: I1104 02:57:45.718325     394 reconciler.go:207] operationExecutor.VerifyControllerAttachedVolume started for volume "kubeconfig" (UniqueName: "kubernetes.io/host-path/309ba8fd17cb0652a8f90e12725f1edc-kubeconfig") pod "kube-controller-manager-master-centos" (UID: "309ba8fd17cb0652a8f90e12725f1edc")
+Nov 04 02:57:45 master-centos kubelet[394]: I1104 02:57:45.718390     394 reconciler.go:207] operationExecutor.VerifyControllerAttachedVolume started for volume "etcd-certs" (UniqueName: "kubernetes.io/host-path/48889bdd121b4da9b8018bda503e06dc-etcd-certs") pod "etcd-master-centos" (UID: "48889bdd121b4da9b8018bda503e06dc")
+Nov 04 02:57:45 master-centos kubelet[394]: I1104 02:57:45.718426     394 reconciler.go:207] operationExecutor.VerifyControllerAttachedVolume started for volume "k8s-certs" (UniqueName: "kubernetes.io/host-path/71d816856ea6e920781f7edf59100b9d-k8s-certs") pod "kube-apiserver-master-centos" (UID: "71d816856ea6e920781f7edf59100b9d")
+Nov 04 02:57:45 master-centos kubelet[394]: W1104 02:57:45.720230     394 pod_container_deletor.go:75] Container "893f3f170ab81900a16ae00b946bf60e7499ebb8a9fcbefc921560b2015c8045" not found in pod's containers
+Nov 04 02:57:45 master-centos kubelet[394]: I1104 02:57:45.720298     394 kubelet_node_status.go:276] Setting node annotation to enable volume controller attach/detach
+Nov 04 02:57:45 master-centos kubelet[394]: I1104 02:57:45.722640     394 kubelet_node_status.go:276] Setting node annotation to enable volume controller attach/detach
+Nov 04 02:57:45 master-centos kubelet[394]: W1104 02:57:45.725589     394 pod_container_deletor.go:75] Container "243c24c9853209dc0a6b30254d4e4171854f16573fd8c952fcea1f18b390c0d6" not found in pod's containers
+Nov 04 02:57:45 master-centos kubelet[394]: I1104 02:57:45.725679     394 kubelet_node_status.go:276] Setting node annotation to enable volume controller attach/detach
+Nov 04 02:57:45 master-centos kubelet[394]: I1104 02:57:45.727588     394 kubelet_node_status.go:276] Setting node annotation to enable volume controller attach/detach
+Nov 04 02:57:45 master-centos kubelet[394]: W1104 02:57:45.730697     394 pod_container_deletor.go:75] Container "d02044df293d01009f1bbb75110179e08191dd03166be62c6d423381a5c3260b" not found in pod's containers
+Nov 04 02:57:45 master-centos kubelet[394]: W1104 02:57:45.745292     394 cni.go:293] CNI failed to retrieve network namespace path: Error: No such container: daec78fff11b06286c7bb4fd2863e7346ceee1a2cde8e66bde5357efac7bee03
+Nov 04 02:57:45 master-centos kubelet[394]: I1104 02:57:45.751797     394 kubelet_node_status.go:276] Setting node annotation to enable volume controller attach/detach
+Nov 04 02:57:45 master-centos kubelet[394]: I1104 02:57:45.755018     394 kubelet_node_status.go:70] Attempting to register node master-centos
+Nov 04 02:57:45 master-centos kubelet[394]: E1104 02:57:45.755754     394 kubelet_node_status.go:92] Unable to register node "master-centos" with API server: Post https://10.142.0.2:6443/api/v1/nodes: dial tcp 10.142.0.2:6443: connect: connection refused
+Nov 04 02:57:45 master-centos kubelet[394]: W1104 02:57:45.770544     394 cni.go:293] CNI failed to retrieve network namespace path: Error: No such container: d2dcedf6d6e7864b7ee9bbf62b4ce62382d2ee9e19054817e389dcff64c9e4a4
+Nov 04 02:57:45 master-centos kubelet[394]: W1104 02:57:45.795213     394 cni.go:293] CNI failed to retrieve network namespace path: Error: No such container: d1f314eedbd192fae624cf67a9fc13c28abca22691459da020a623d4d5ef07d7
+Nov 04 02:57:45 master-centos kubelet[394]: E1104 02:57:45.818126     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:45 master-centos kubelet[394]: I1104 02:57:45.819050     394 reconciler.go:207] operationExecutor.VerifyControllerAttachedVolume started for volume "kubeconfig" (UniqueName: "kubernetes.io/host-path/ee7b1077c61516320f4273309e9b4690-kubeconfig") pod "kube-scheduler-master-centos" (UID: "ee7b1077c61516320f4273309e9b4690")
+Nov 04 02:57:45 master-centos kubelet[394]: W1104 02:57:45.839437     394 cni.go:293] CNI failed to retrieve network namespace path: Error: No such container: ac0b4218e6dfd74496ce94caf62dbe6cb8289e941904a02b0068971c30cf67c0
+Nov 04 02:57:45 master-centos kubelet[394]: E1104 02:57:45.855151     394 reflector.go:134] k8s.io/kubernetes/pkg/kubelet/kubelet.go:442: Failed to list *v1.Service: Get https://10.142.0.2:6443/api/v1/services?limit=500&resourceVersion=0: dial tcp 10.142.0.2:6443: connect: connection refused
+Nov 04 02:57:45 master-centos kubelet[394]: E1104 02:57:45.856563     394 reflector.go:134] k8s.io/kubernetes/pkg/kubelet/kubelet.go:451: Failed to list *v1.Node: Get https://10.142.0.2:6443/api/v1/nodes?fieldSelector=metadata.name%3Dmaster-centos&limit=500&resourceVersion=0: dial tcp 10.142.0.2:6443: connect: connection refused
+Nov 04 02:57:45 master-centos kubelet[394]: E1104 02:57:45.857288     394 reflector.go:134] k8s.io/kubernetes/pkg/kubelet/config/apiserver.go:47: Failed to list *v1.Pod: Get https://10.142.0.2:6443/api/v1/pods?fieldSelector=spec.nodeName%3Dmaster-centos&limit=500&resourceVersion=0: dial tcp 10.142.0.2:6443: connect: connection refused
+Nov 04 02:57:45 master-centos kubelet[394]: W1104 02:57:45.876068     394 cni.go:293] CNI failed to retrieve network namespace path: Error: No such container: a0980ec65295cde12b9deb20720d1c269c033114ab921f017f235da371adecd7
+Nov 04 02:57:45 master-centos kubelet[394]: W1104 02:57:45.899549     394 cni.go:293] CNI failed to retrieve network namespace path: Error: No such container: 96fbd498af09fa86e284b908b4970013c8baad143813a73b10dc4b2f80a9fe32
+Nov 04 02:57:45 master-centos kubelet[394]: E1104 02:57:45.918282     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:45 master-centos kubelet[394]: W1104 02:57:45.924796     394 cni.go:293] CNI failed to retrieve network namespace path: Error: No such container: 9551b53a00944cdf40ed6878154724b857612ae01b0ee49643d4665ffc64e86c
+Nov 04 02:57:45 master-centos kubelet[394]: W1104 02:57:45.948021     394 cni.go:293] CNI failed to retrieve network namespace path: Error: No such container: 914e486bc37938bb4daf509dbc76330e03b191753324f8a5cd334e2f3453a2d1
+Nov 04 02:57:45 master-centos kubelet[394]: W1104 02:57:45.972571     394 cni.go:293] CNI failed to retrieve network namespace path: Error: No such container: 8aed7827472d907d02a9442eae9054cb89e00ffa307d64a7443650765bbd2fe9
+Nov 04 02:57:46 master-centos kubelet[394]: E1104 02:57:46.024705     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:46 master-centos kubelet[394]: W1104 02:57:46.039073     394 cni.go:293] CNI failed to retrieve network namespace path: Error: No such container: 898a15fbacce177a245b4e4b81ea09cfdbb1ea9350ae37cc77d54397d5266941
+Nov 04 02:57:46 master-centos kubelet[394]: W1104 02:57:46.071994     394 cni.go:293] CNI failed to retrieve network namespace path: Error: No such container: 76717653d114c77601dbfcd03883571b92f9a28c24f4b58cd4ec00f7c00ce652
+Nov 04 02:57:46 master-centos kubelet[394]: W1104 02:57:46.124093     394 cni.go:293] CNI failed to retrieve network namespace path: Error: No such container: 72f903a06f25f505f46f2ddba03d2e71964304d6003d75f7f0214efffd57c736
+Nov 04 02:57:46 master-centos kubelet[394]: E1104 02:57:46.125043     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:46 master-centos kubelet[394]: W1104 02:57:46.166818     394 cni.go:293] CNI failed to retrieve network namespace path: Error: No such container: 68b4fdb1054e44d9ca81a54885c440cea8d503a01df9b296bc6391cfe8b19565
+Nov 04 02:57:46 master-centos kubelet[394]: W1104 02:57:46.217422     394 cni.go:293] CNI failed to retrieve network namespace path: Error: No such container: 649927ea2398d893d4a8f035938af1a927b3ffeabc2fb14fab8d1c1ee223b8c8
+Nov 04 02:57:46 master-centos kubelet[394]: E1104 02:57:46.225266     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:46 master-centos kubelet[394]: W1104 02:57:46.257287     394 cni.go:293] CNI failed to retrieve network namespace path: Error: No such container: 5e730f0ff41d5f62b7785ffe297fc56b86b85b3a2dc4a9752c03d4d268f5ca73
+Nov 04 02:57:46 master-centos kubelet[394]: W1104 02:57:46.282405     394 cni.go:293] CNI failed to retrieve network namespace path: Error: No such container: 5b538a807949c803caa1ca96bc3f6b310d955770042cb6c2029d3b8af6e17377
+Nov 04 02:57:46 master-centos kubelet[394]: E1104 02:57:46.325762     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:46 master-centos kubelet[394]: W1104 02:57:46.355498     394 cni.go:293] CNI failed to retrieve network namespace path: Error: No such container: 4c547e96e489723d696ba20b689052961220a255a72eb2e04097f1fb6a571ba4
+Nov 04 02:57:46 master-centos kubelet[394]: W1104 02:57:46.394012     394 cni.go:293] CNI failed to retrieve network namespace path: Error: No such container: 3ec8e443ba741e29dee494f0b9453acc55a13b54aa00002fac5ff79be5ef587d
+Nov 04 02:57:46 master-centos kubelet[394]: E1104 02:57:46.427175     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:46 master-centos kubelet[394]: W1104 02:57:46.452706     394 cni.go:293] CNI failed to retrieve network namespace path: Error: No such container: 3de6be4e16ea5efce38521387044a70dd1dce4515d53e4ce49e6333e7fa47c75
+Nov 04 02:57:46 master-centos kubelet[394]: W1104 02:57:46.519276     394 cni.go:293] CNI failed to retrieve network namespace path: Error: No such container: 3aa14e52d53ae306ba93a1d25bd920f1604f6a109b00e4dc4083eaab01487dea
+Nov 04 02:57:46 master-centos kubelet[394]: E1104 02:57:46.530576     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:46 master-centos kubelet[394]: I1104 02:57:46.556921     394 kubelet_node_status.go:276] Setting node annotation to enable volume controller attach/detach
+Nov 04 02:57:46 master-centos kubelet[394]: I1104 02:57:46.572864     394 kubelet_node_status.go:70] Attempting to register node master-centos
+Nov 04 02:57:46 master-centos kubelet[394]: E1104 02:57:46.573233     394 kubelet_node_status.go:92] Unable to register node "master-centos" with API server: Post https://10.142.0.2:6443/api/v1/nodes: dial tcp 10.142.0.2:6443: connect: connection refused
+Nov 04 02:57:46 master-centos kubelet[394]: W1104 02:57:46.605199     394 cni.go:293] CNI failed to retrieve network namespace path: Error: No such container: 21ff3e1e5743eac80f95555b8724bcff164ad3056c1fc09dc0716e8532978758
+Nov 04 02:57:46 master-centos kubelet[394]: E1104 02:57:46.630854     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:46 master-centos kubelet[394]: W1104 02:57:46.647393     394 cni.go:293] CNI failed to retrieve network namespace path: Error: No such container: 1bfc278face9dec95697555c4b95c2c7717883c6ee60032f3a8e0a3d13c3f843
+Nov 04 02:57:46 master-centos kubelet[394]: W1104 02:57:46.690397     394 cni.go:293] CNI failed to retrieve network namespace path: Error: No such container: 14833ff5f22a39c249cbff93d721c6d123e6de7f9eb1922a031a8838d4d57912
+Nov 04 02:57:46 master-centos kubelet[394]: E1104 02:57:46.734656     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:46 master-centos kubelet[394]: W1104 02:57:46.735957     394 cni.go:293] CNI failed to retrieve network namespace path: Error: No such container: 142f362e4431453acbce6419d0ed23db265dc8ced49494a43a38b6c5e9622e3f
+Nov 04 02:57:46 master-centos kubelet[394]: W1104 02:57:46.793394     394 cni.go:293] CNI failed to retrieve network namespace path: Error: No such container: 0eeaa3614c0f5556976ea3691f43db2483683fafdb256b4719bc5d24fd28967a
+Nov 04 02:57:46 master-centos kubelet[394]: E1104 02:57:46.837242     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:46 master-centos kubelet[394]: W1104 02:57:46.842571     394 cni.go:293] CNI failed to retrieve network namespace path: Error: No such container: 044f38608b7cc9e7a4781e2ababf68213d0f3d7f625655dd33764bf732da2cc6
+Nov 04 02:57:46 master-centos kubelet[394]: E1104 02:57:46.856992     394 reflector.go:134] k8s.io/kubernetes/pkg/kubelet/kubelet.go:442: Failed to list *v1.Service: Get https://10.142.0.2:6443/api/v1/services?limit=500&resourceVersion=0: dial tcp 10.142.0.2:6443: connect: connection refused
+Nov 04 02:57:46 master-centos kubelet[394]: E1104 02:57:46.857310     394 reflector.go:134] k8s.io/kubernetes/pkg/kubelet/kubelet.go:451: Failed to list *v1.Node: Get https://10.142.0.2:6443/api/v1/nodes?fieldSelector=metadata.name%3Dmaster-centos&limit=500&resourceVersion=0: dial tcp 10.142.0.2:6443: connect: connection refused
+Nov 04 02:57:46 master-centos kubelet[394]: E1104 02:57:46.859622     394 reflector.go:134] k8s.io/kubernetes/pkg/kubelet/config/apiserver.go:47: Failed to list *v1.Pod: Get https://10.142.0.2:6443/api/v1/pods?fieldSelector=spec.nodeName%3Dmaster-centos&limit=500&resourceVersion=0: dial tcp 10.142.0.2:6443: connect: connection refused
+Nov 04 02:57:46 master-centos kubelet[394]: E1104 02:57:46.937528     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:47 master-centos kubelet[394]: E1104 02:57:47.039069     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:47 master-centos kubelet[394]: E1104 02:57:47.139459     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:47 master-centos kubelet[394]: E1104 02:57:47.239645     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:47 master-centos kubelet[394]: E1104 02:57:47.339848     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:47 master-centos kubelet[394]: E1104 02:57:47.440044     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:47 master-centos kubelet[394]: E1104 02:57:47.540247     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:47 master-centos kubelet[394]: E1104 02:57:47.640443     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:47 master-centos kubelet[394]: I1104 02:57:47.695455     394 kubelet_node_status.go:276] Setting node annotation to enable volume controller attach/detach
+Nov 04 02:57:47 master-centos kubelet[394]: W1104 02:57:47.698492     394 status_manager.go:485] Failed to get status for pod "kube-apiserver-master-centos_kube-system(71d816856ea6e920781f7edf59100b9d)": Get https://10.142.0.2:6443/api/v1/namespaces/kube-system/pods/kube-apiserver-master-centos: dial tcp 10.142.0.2:6443: connect: connection refused
+Nov 04 02:57:47 master-centos kubelet[394]: I1104 02:57:47.706325     394 kubelet_node_status.go:276] Setting node annotation to enable volume controller attach/detach
+Nov 04 02:57:47 master-centos kubelet[394]: W1104 02:57:47.712269     394 status_manager.go:485] Failed to get status for pod "etcd-master-centos_kube-system(48889bdd121b4da9b8018bda503e06dc)": Get https://10.142.0.2:6443/api/v1/namespaces/kube-system/pods/etcd-master-centos: dial tcp 10.142.0.2:6443: connect: connection refused
+Nov 04 02:57:47 master-centos kubelet[394]: I1104 02:57:47.720085     394 kubelet_node_status.go:276] Setting node annotation to enable volume controller attach/detach
+Nov 04 02:57:47 master-centos kubelet[394]: W1104 02:57:47.723490     394 status_manager.go:485] Failed to get status for pod "kube-scheduler-master-centos_kube-system(ee7b1077c61516320f4273309e9b4690)": Get https://10.142.0.2:6443/api/v1/namespaces/kube-system/pods/kube-scheduler-master-centos: dial tcp 10.142.0.2:6443: connect: connection refused
+Nov 04 02:57:47 master-centos kubelet[394]: I1104 02:57:47.731425     394 kubelet_node_status.go:276] Setting node annotation to enable volume controller attach/detach
+Nov 04 02:57:47 master-centos kubelet[394]: W1104 02:57:47.734074     394 status_manager.go:485] Failed to get status for pod "kube-controller-manager-master-centos_kube-system(309ba8fd17cb0652a8f90e12725f1edc)": Get https://10.142.0.2:6443/api/v1/namespaces/kube-system/pods/kube-controller-manager-master-centos: dial tcp 10.142.0.2:6443: connect: connection refused
+Nov 04 02:57:47 master-centos kubelet[394]: E1104 02:57:47.740648     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:47 master-centos kubelet[394]: E1104 02:57:47.840880     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:47 master-centos kubelet[394]: E1104 02:57:47.857898     394 reflector.go:134] k8s.io/kubernetes/pkg/kubelet/kubelet.go:442: Failed to list *v1.Service: Get https://10.142.0.2:6443/api/v1/services?limit=500&resourceVersion=0: dial tcp 10.142.0.2:6443: connect: connection refused
+Nov 04 02:57:47 master-centos kubelet[394]: E1104 02:57:47.860030     394 reflector.go:134] k8s.io/kubernetes/pkg/kubelet/kubelet.go:451: Failed to list *v1.Node: Get https://10.142.0.2:6443/api/v1/nodes?fieldSelector=metadata.name%3Dmaster-centos&limit=500&resourceVersion=0: dial tcp 10.142.0.2:6443: connect: connection refused
+Nov 04 02:57:47 master-centos kubelet[394]: E1104 02:57:47.861134     394 reflector.go:134] k8s.io/kubernetes/pkg/kubelet/config/apiserver.go:47: Failed to list *v1.Pod: Get https://10.142.0.2:6443/api/v1/pods?fieldSelector=spec.nodeName%3Dmaster-centos&limit=500&resourceVersion=0: dial tcp 10.142.0.2:6443: connect: connection refused
+Nov 04 02:57:47 master-centos kubelet[394]: E1104 02:57:47.942603     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:48 master-centos kubelet[394]: E1104 02:57:48.043503     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:48 master-centos kubelet[394]: E1104 02:57:48.143689     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:48 master-centos kubelet[394]: I1104 02:57:48.173438     394 kubelet_node_status.go:276] Setting node annotation to enable volume controller attach/detach
+Nov 04 02:57:48 master-centos kubelet[394]: I1104 02:57:48.176368     394 kubelet_node_status.go:70] Attempting to register node master-centos
+Nov 04 02:57:48 master-centos kubelet[394]: E1104 02:57:48.176773     394 kubelet_node_status.go:92] Unable to register node "master-centos" with API server: Post https://10.142.0.2:6443/api/v1/nodes: dial tcp 10.142.0.2:6443: connect: connection refused
+Nov 04 02:57:48 master-centos kubelet[394]: E1104 02:57:48.244022     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:48 master-centos kubelet[394]: E1104 02:57:48.345119     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:48 master-centos kubelet[394]: E1104 02:57:48.445433     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:48 master-centos kubelet[394]: E1104 02:57:48.545619     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:48 master-centos kubelet[394]: E1104 02:57:48.645863     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:48 master-centos kubelet[394]: I1104 02:57:48.740969     394 kubelet_node_status.go:276] Setting node annotation to enable volume controller attach/detach
+Nov 04 02:57:48 master-centos kubelet[394]: I1104 02:57:48.741521     394 kubelet_node_status.go:276] Setting node annotation to enable volume controller attach/detach
+Nov 04 02:57:48 master-centos kubelet[394]: I1104 02:57:48.742043     394 kubelet_node_status.go:276] Setting node annotation to enable volume controller attach/detach
+Nov 04 02:57:48 master-centos kubelet[394]: I1104 02:57:48.742455     394 kubelet_node_status.go:276] Setting node annotation to enable volume controller attach/detach
+Nov 04 02:57:48 master-centos kubelet[394]: E1104 02:57:48.746359     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:48 master-centos kubelet[394]: E1104 02:57:48.846524     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:48 master-centos kubelet[394]: E1104 02:57:48.858570     394 reflector.go:134] k8s.io/kubernetes/pkg/kubelet/kubelet.go:442: Failed to list *v1.Service: Get https://10.142.0.2:6443/api/v1/services?limit=500&resourceVersion=0: dial tcp 10.142.0.2:6443: connect: connection refused
+Nov 04 02:57:48 master-centos kubelet[394]: E1104 02:57:48.860615     394 reflector.go:134] k8s.io/kubernetes/pkg/kubelet/kubelet.go:451: Failed to list *v1.Node: Get https://10.142.0.2:6443/api/v1/nodes?fieldSelector=metadata.name%3Dmaster-centos&limit=500&resourceVersion=0: dial tcp 10.142.0.2:6443: connect: connection refused
+Nov 04 02:57:48 master-centos kubelet[394]: E1104 02:57:48.861601     394 reflector.go:134] k8s.io/kubernetes/pkg/kubelet/config/apiserver.go:47: Failed to list *v1.Pod: Get https://10.142.0.2:6443/api/v1/pods?fieldSelector=spec.nodeName%3Dmaster-centos&limit=500&resourceVersion=0: dial tcp 10.142.0.2:6443: connect: connection refused
+Nov 04 02:57:48 master-centos kubelet[394]: E1104 02:57:48.947442     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:49 master-centos kubelet[394]: E1104 02:57:49.048480     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:49 master-centos kubelet[394]: E1104 02:57:49.149508     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:49 master-centos kubelet[394]: E1104 02:57:49.250500     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:49 master-centos kubelet[394]: E1104 02:57:49.351438     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:49 master-centos kubelet[394]: E1104 02:57:49.452509     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:49 master-centos kubelet[394]: E1104 02:57:49.555483     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:49 master-centos kubelet[394]: E1104 02:57:49.656430     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:49 master-centos kubelet[394]: E1104 02:57:49.756620     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:49 master-centos kubelet[394]: E1104 02:57:49.856812     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:49 master-centos kubelet[394]: E1104 02:57:49.957098     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:50 master-centos kubelet[394]: E1104 02:57:50.057288     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:50 master-centos kubelet[394]: E1104 02:57:50.164496     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:50 master-centos kubelet[394]: E1104 02:57:50.265447     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:50 master-centos kubelet[394]: E1104 02:57:50.366656     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:50 master-centos kubelet[394]: E1104 02:57:50.466766     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:50 master-centos kubelet[394]: E1104 02:57:50.567445     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:50 master-centos kubelet[394]: E1104 02:57:50.668529     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:50 master-centos kubelet[394]: E1104 02:57:50.770299     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:50 master-centos kubelet[394]: E1104 02:57:50.870537     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:50 master-centos kubelet[394]: E1104 02:57:50.976426     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:51 master-centos kubelet[394]: E1104 02:57:51.076718     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:51 master-centos kubelet[394]: E1104 02:57:51.176874     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:51 master-centos kubelet[394]: E1104 02:57:51.277118     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:51 master-centos kubelet[394]: I1104 02:57:51.376942     394 kubelet_node_status.go:276] Setting node annotation to enable volume controller attach/detach
+Nov 04 02:57:51 master-centos kubelet[394]: E1104 02:57:51.377545     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:51 master-centos kubelet[394]: I1104 02:57:51.379533     394 kubelet_node_status.go:70] Attempting to register node master-centos
+Nov 04 02:57:51 master-centos kubelet[394]: E1104 02:57:51.478222     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:51 master-centos kubelet[394]: E1104 02:57:51.578462     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:51 master-centos kubelet[394]: E1104 02:57:51.678669     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:51 master-centos kubelet[394]: E1104 02:57:51.779086     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:51 master-centos kubelet[394]: E1104 02:57:51.879477     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:51 master-centos kubelet[394]: E1104 02:57:51.979656     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:52 master-centos kubelet[394]: E1104 02:57:52.079990     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:52 master-centos kubelet[394]: E1104 02:57:52.180528     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:52 master-centos kubelet[394]: E1104 02:57:52.280761     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:52 master-centos kubelet[394]: E1104 02:57:52.381559     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:52 master-centos kubelet[394]: E1104 02:57:52.481727     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:52 master-centos kubelet[394]: E1104 02:57:52.581925     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:52 master-centos kubelet[394]: E1104 02:57:52.692461     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:52 master-centos kubelet[394]: E1104 02:57:52.792643     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:52 master-centos kubelet[394]: E1104 02:57:52.892861     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:52 master-centos kubelet[394]: E1104 02:57:52.993071     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:53 master-centos kubelet[394]: E1104 02:57:53.093282     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:53 master-centos kubelet[394]: E1104 02:57:53.193554     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:53 master-centos kubelet[394]: E1104 02:57:53.294515     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:53 master-centos kubelet[394]: E1104 02:57:53.394667     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:53 master-centos kubelet[394]: E1104 02:57:53.494959     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:53 master-centos kubelet[394]: E1104 02:57:53.595333     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:53 master-centos kubelet[394]: E1104 02:57:53.695535     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:53 master-centos kubelet[394]: E1104 02:57:53.796116     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:53 master-centos kubelet[394]: E1104 02:57:53.896338     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:53 master-centos kubelet[394]: E1104 02:57:53.997520     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:54 master-centos kubelet[394]: E1104 02:57:54.097672     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:54 master-centos kubelet[394]: E1104 02:57:54.202518     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:54 master-centos kubelet[394]: E1104 02:57:54.302698     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:54 master-centos kubelet[394]: E1104 02:57:54.402822     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:54 master-centos kubelet[394]: E1104 02:57:54.503090     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:54 master-centos kubelet[394]: E1104 02:57:54.604458     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:54 master-centos kubelet[394]: E1104 02:57:54.704699     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:54 master-centos kubelet[394]: E1104 02:57:54.806516     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:54 master-centos kubelet[394]: E1104 02:57:54.906738     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:55 master-centos kubelet[394]: E1104 02:57:55.006978     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:55 master-centos kubelet[394]: E1104 02:57:55.107235     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:55 master-centos kubelet[394]: E1104 02:57:55.207444     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:55 master-centos kubelet[394]: E1104 02:57:55.207524     394 eviction_manager.go:243] eviction manager: failed to get get summary stats: failed to get node info: node "master-centos" not found
+Nov 04 02:57:55 master-centos kubelet[394]: E1104 02:57:55.307668     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:55 master-centos kubelet[394]: E1104 02:57:55.407902     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:55 master-centos kubelet[394]: E1104 02:57:55.508221     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:55 master-centos kubelet[394]: E1104 02:57:55.613470     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:55 master-centos kubelet[394]: E1104 02:57:55.713721     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:55 master-centos kubelet[394]: E1104 02:57:55.813803     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:55 master-centos kubelet[394]: E1104 02:57:55.914013     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:56 master-centos kubelet[394]: E1104 02:57:56.014322     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:56 master-centos kubelet[394]: E1104 02:57:56.114460     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:56 master-centos kubelet[394]: E1104 02:57:56.214737     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:56 master-centos kubelet[394]: E1104 02:57:56.315539     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:56 master-centos kubelet[394]: E1104 02:57:56.415744     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:56 master-centos kubelet[394]: E1104 02:57:56.515912     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:56 master-centos kubelet[394]: E1104 02:57:56.616204     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:56 master-centos kubelet[394]: E1104 02:57:56.716457     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:56 master-centos kubelet[394]: E1104 02:57:56.818940     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:56 master-centos kubelet[394]: E1104 02:57:56.923893     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:57 master-centos kubelet[394]: E1104 02:57:57.024114     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:57 master-centos kubelet[394]: E1104 02:57:57.124434     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:57 master-centos kubelet[394]: E1104 02:57:57.224683     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:57 master-centos kubelet[394]: E1104 02:57:57.325524     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:57 master-centos kubelet[394]: E1104 02:57:57.425688     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:57 master-centos kubelet[394]: E1104 02:57:57.531528     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:57 master-centos kubelet[394]: E1104 02:57:57.631669     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:57 master-centos kubelet[394]: E1104 02:57:57.731905     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:57 master-centos kubelet[394]: E1104 02:57:57.839600     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:57 master-centos kubelet[394]: E1104 02:57:57.939771     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:58 master-centos kubelet[394]: E1104 02:57:58.040524     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:58 master-centos kubelet[394]: E1104 02:57:58.140660     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:58 master-centos kubelet[394]: E1104 02:57:58.240936     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:58 master-centos kubelet[394]: E1104 02:57:58.341037     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:58 master-centos kubelet[394]: E1104 02:57:58.443518     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:58 master-centos kubelet[394]: E1104 02:57:58.543668     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:58 master-centos kubelet[394]: E1104 02:57:58.643932     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:58 master-centos kubelet[394]: E1104 02:57:58.744037     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:58 master-centos kubelet[394]: E1104 02:57:58.844337     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:58 master-centos kubelet[394]: E1104 02:57:58.944448     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:59 master-centos kubelet[394]: E1104 02:57:59.047037     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:59 master-centos kubelet[394]: E1104 02:57:59.147282     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:59 master-centos kubelet[394]: E1104 02:57:59.247585     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:59 master-centos kubelet[394]: E1104 02:57:59.347796     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:59 master-centos kubelet[394]: E1104 02:57:59.447958     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:59 master-centos kubelet[394]: E1104 02:57:59.550517     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:59 master-centos kubelet[394]: E1104 02:57:59.650719     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:59 master-centos kubelet[394]: E1104 02:57:59.750854     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:59 master-centos kubelet[394]: E1104 02:57:59.854485     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:57:59 master-centos kubelet[394]: E1104 02:57:59.869854     394 reflector.go:134] k8s.io/kubernetes/pkg/kubelet/kubelet.go:451: Failed to list *v1.Node: Get https://10.142.0.2:6443/api/v1/nodes?fieldSelector=metadata.name%3Dmaster-centos&limit=500&resourceVersion=0: net/http: TLS handshake timeout
+Nov 04 02:57:59 master-centos kubelet[394]: E1104 02:57:59.869942     394 reflector.go:134] k8s.io/kubernetes/pkg/kubelet/config/apiserver.go:47: Failed to list *v1.Pod: Get https://10.142.0.2:6443/api/v1/pods?fieldSelector=spec.nodeName%3Dmaster-centos&limit=500&resourceVersion=0: net/http: TLS handshake timeout
+Nov 04 02:57:59 master-centos kubelet[394]: E1104 02:57:59.870024     394 reflector.go:134] k8s.io/kubernetes/pkg/kubelet/kubelet.go:442: Failed to list *v1.Service: Get https://10.142.0.2:6443/api/v1/services?limit=500&resourceVersion=0: net/http: TLS handshake timeout
+Nov 04 02:57:59 master-centos kubelet[394]: E1104 02:57:59.955960     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:00 master-centos kubelet[394]: E1104 02:58:00.066714     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:00 master-centos kubelet[394]: I1104 02:58:00.066860     394 kubelet_node_status.go:112] Node master-centos was previously registered
+Nov 04 02:58:00 master-centos kubelet[394]: I1104 02:58:00.066877     394 kubelet_node_status.go:73] Successfully registered node master-centos
+Nov 04 02:58:00 master-centos kubelet[394]: E1104 02:58:00.166933     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:00 master-centos kubelet[394]: E1104 02:58:00.267246     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:00 master-centos kubelet[394]: E1104 02:58:00.367448     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:00 master-centos kubelet[394]: E1104 02:58:00.468387     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:00 master-centos kubelet[394]: E1104 02:58:00.568554     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:00 master-centos kubelet[394]: E1104 02:58:00.668714     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:00 master-centos kubelet[394]: E1104 02:58:00.768930     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:00 master-centos kubelet[394]: E1104 02:58:00.869423     394 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:00 master-centos kubelet[394]: I1104 02:58:00.985099     394 reconciler.go:207] operationExecutor.VerifyControllerAttachedVolume started for volume "kube-proxy-token-949dj" (UniqueName: "kubernetes.io/secret/e41fe43b-dfd9-11e8-94a3-42010a8e0002-kube-proxy-token-949dj") pod "kube-proxy-nrgzg" (UID: "e41fe43b-dfd9-11e8-94a3-42010a8e0002")
+Nov 04 02:58:00 master-centos kubelet[394]: I1104 02:58:00.985141     394 reconciler.go:207] operationExecutor.VerifyControllerAttachedVolume started for volume "cni" (UniqueName: "kubernetes.io/host-path/0e9fb516-dfda-11e8-94a3-42010a8e0002-cni") pod "kube-flannel-ds-amd64-hb6sq" (UID: "0e9fb516-dfda-11e8-94a3-42010a8e0002")
+Nov 04 02:58:00 master-centos kubelet[394]: I1104 02:58:00.985170     394 reconciler.go:207] operationExecutor.VerifyControllerAttachedVolume started for volume "xtables-lock" (UniqueName: "kubernetes.io/host-path/e41fe43b-dfd9-11e8-94a3-42010a8e0002-xtables-lock") pod "kube-proxy-nrgzg" (UID: "e41fe43b-dfd9-11e8-94a3-42010a8e0002")
+Nov 04 02:58:00 master-centos kubelet[394]: I1104 02:58:00.985196     394 reconciler.go:207] operationExecutor.VerifyControllerAttachedVolume started for volume "kube-proxy" (UniqueName: "kubernetes.io/configmap/e41fe43b-dfd9-11e8-94a3-42010a8e0002-kube-proxy") pod "kube-proxy-nrgzg" (UID: "e41fe43b-dfd9-11e8-94a3-42010a8e0002")
+Nov 04 02:58:00 master-centos kubelet[394]: I1104 02:58:00.985221     394 reconciler.go:207] operationExecutor.VerifyControllerAttachedVolume started for volume "lib-modules" (UniqueName: "kubernetes.io/host-path/e41fe43b-dfd9-11e8-94a3-42010a8e0002-lib-modules") pod "kube-proxy-nrgzg" (UID: "e41fe43b-dfd9-11e8-94a3-42010a8e0002")
+Nov 04 02:58:00 master-centos kubelet[394]: I1104 02:58:00.985246     394 reconciler.go:207] operationExecutor.VerifyControllerAttachedVolume started for volume "run" (UniqueName: "kubernetes.io/host-path/0e9fb516-dfda-11e8-94a3-42010a8e0002-run") pod "kube-flannel-ds-amd64-hb6sq" (UID: "0e9fb516-dfda-11e8-94a3-42010a8e0002")
+Nov 04 02:58:00 master-centos kubelet[394]: I1104 02:58:00.985273     394 reconciler.go:207] operationExecutor.VerifyControllerAttachedVolume started for volume "flannel-cfg" (UniqueName: "kubernetes.io/configmap/0e9fb516-dfda-11e8-94a3-42010a8e0002-flannel-cfg") pod "kube-flannel-ds-amd64-hb6sq" (UID: "0e9fb516-dfda-11e8-94a3-42010a8e0002")
+Nov 04 02:58:00 master-centos kubelet[394]: I1104 02:58:00.985314     394 reconciler.go:207] operationExecutor.VerifyControllerAttachedVolume started for volume "flannel-token-5t4j9" (UniqueName: "kubernetes.io/secret/0e9fb516-dfda-11e8-94a3-42010a8e0002-flannel-token-5t4j9") pod "kube-flannel-ds-amd64-hb6sq" (UID: "0e9fb516-dfda-11e8-94a3-42010a8e0002")
+Nov 04 02:58:00 master-centos kubelet[394]: I1104 02:58:00.985367     394 reconciler.go:207] operationExecutor.VerifyControllerAttachedVolume started for volume "config-volume" (UniqueName: "kubernetes.io/configmap/950c1401-dfdb-11e8-94a3-42010a8e0002-config-volume") pod "coredns-576cbf47c7-75ghr" (UID: "950c1401-dfdb-11e8-94a3-42010a8e0002")
+Nov 04 02:58:00 master-centos kubelet[394]: I1104 02:58:00.985397     394 reconciler.go:207] operationExecutor.VerifyControllerAttachedVolume started for volume "coredns-token-wwlz2" (UniqueName: "kubernetes.io/secret/950c1401-dfdb-11e8-94a3-42010a8e0002-coredns-token-wwlz2") pod "coredns-576cbf47c7-75ghr" (UID: "950c1401-dfdb-11e8-94a3-42010a8e0002")
+Nov 04 02:58:00 master-centos kubelet[394]: I1104 02:58:00.985410     394 reconciler.go:154] Reconciler: start to sync state
+Nov 04 02:58:01 master-centos kubelet[394]: W1104 02:58:01.175685     394 raw.go:87] Error while processing event ("/sys/fs/cgroup/cpu,cpuacct/system.slice/run-2557.scope": 0x40000100 == IN_CREATE|IN_ISDIR): inotify_add_watch /sys/fs/cgroup/cpu,cpuacct/system.slice/run-2557.scope: no such file or directory
+Nov 04 02:58:01 master-centos kubelet[394]: W1104 02:58:01.175732     394 raw.go:87] Error while processing event ("/sys/fs/cgroup/blkio/system.slice/run-2557.scope": 0x40000100 == IN_CREATE|IN_ISDIR): inotify_add_watch /sys/fs/cgroup/blkio/system.slice/run-2557.scope: no such file or directory
+Nov 04 02:58:01 master-centos kubelet[394]: W1104 02:58:01.175764     394 raw.go:87] Error while processing event ("/sys/fs/cgroup/memory/system.slice/run-2557.scope": 0x40000100 == IN_CREATE|IN_ISDIR): inotify_add_watch /sys/fs/cgroup/memory/system.slice/run-2557.scope: no such file or directory
+Nov 04 02:58:01 master-centos kubelet[394]: W1104 02:58:01.175779     394 raw.go:87] Error while processing event ("/sys/fs/cgroup/devices/system.slice/run-2557.scope": 0x40000100 == IN_CREATE|IN_ISDIR): inotify_add_watch /sys/fs/cgroup/devices/system.slice/run-2557.scope: no such file or directory
+Nov 04 02:58:01 master-centos kubelet[394]: W1104 02:58:01.363802     394 kuberuntime_container.go:683] No ref for container {"docker" "b9355ce60db16229021394e7027066b06e534be5b3ad7e3f1f352e418f15996b"}
+Nov 04 02:58:01 master-centos kubelet[394]: E1104 02:58:01.812040     394 cni.go:310] Error adding network: open /run/flannel/subnet.env: no such file or directory
+Nov 04 02:58:01 master-centos kubelet[394]: E1104 02:58:01.812072     394 cni.go:278] Error while adding to cni network: open /run/flannel/subnet.env: no such file or directory
+Nov 04 02:58:02 master-centos kubelet[394]: E1104 02:58:02.021681     394 remote_runtime.go:96] RunPodSandbox from runtime service failed: rpc error: code = Unknown desc = failed to set up sandbox container "44ed093393dbfa0d25e94c2547f4b24aed6818438a95d4c8f7e2394bae77e94b" network for pod "coredns-576cbf47c7-75ghr": NetworkPlugin cni failed to set up pod "coredns-576cbf47c7-75ghr_kube-system" network: open /run/flannel/subnet.env: no such file or directory
+Nov 04 02:58:02 master-centos kubelet[394]: E1104 02:58:02.021743     394 kuberuntime_sandbox.go:65] CreatePodSandbox for pod "coredns-576cbf47c7-75ghr_kube-system(950c1401-dfdb-11e8-94a3-42010a8e0002)" failed: rpc error: code = Unknown desc = failed to set up sandbox container "44ed093393dbfa0d25e94c2547f4b24aed6818438a95d4c8f7e2394bae77e94b" network for pod "coredns-576cbf47c7-75ghr": NetworkPlugin cni failed to set up pod "coredns-576cbf47c7-75ghr_kube-system" network: open /run/flannel/subnet.env: no such file or directory
+Nov 04 02:58:02 master-centos kubelet[394]: E1104 02:58:02.021758     394 kuberuntime_manager.go:657] createPodSandbox for pod "coredns-576cbf47c7-75ghr_kube-system(950c1401-dfdb-11e8-94a3-42010a8e0002)" failed: rpc error: code = Unknown desc = failed to set up sandbox container "44ed093393dbfa0d25e94c2547f4b24aed6818438a95d4c8f7e2394bae77e94b" network for pod "coredns-576cbf47c7-75ghr": NetworkPlugin cni failed to set up pod "coredns-576cbf47c7-75ghr_kube-system" network: open /run/flannel/subnet.env: no such file or directory
+Nov 04 02:58:02 master-centos kubelet[394]: E1104 02:58:02.021861     394 pod_workers.go:186] Error syncing pod 950c1401-dfdb-11e8-94a3-42010a8e0002 ("coredns-576cbf47c7-75ghr_kube-system(950c1401-dfdb-11e8-94a3-42010a8e0002)"), skipping: failed to "CreatePodSandbox" for "coredns-576cbf47c7-75ghr_kube-system(950c1401-dfdb-11e8-94a3-42010a8e0002)" with CreatePodSandboxError: "CreatePodSandbox for pod \"coredns-576cbf47c7-75ghr_kube-system(950c1401-dfdb-11e8-94a3-42010a8e0002)\" failed: rpc error: code = Unknown desc = failed to set up sandbox container \"44ed093393dbfa0d25e94c2547f4b24aed6818438a95d4c8f7e2394bae77e94b\" network for pod \"coredns-576cbf47c7-75ghr\": NetworkPlugin cni failed to set up pod \"coredns-576cbf47c7-75ghr_kube-system\" network: open /run/flannel/subnet.env: no such file or directory"
+Nov 04 02:58:02 master-centos kubelet[394]: W1104 02:58:02.357540     394 docker_sandbox.go:375] failed to read pod IP from plugin/docker: NetworkPlugin cni failed on the status hook for pod "coredns-576cbf47c7-75ghr_kube-system": CNI failed to retrieve network namespace path: cannot find network namespace for the terminated container "44ed093393dbfa0d25e94c2547f4b24aed6818438a95d4c8f7e2394bae77e94b"
+Nov 04 02:58:02 master-centos kubelet[394]: W1104 02:58:02.367778     394 cni.go:293] CNI failed to retrieve network namespace path: cannot find network namespace for the terminated container "44ed093393dbfa0d25e94c2547f4b24aed6818438a95d4c8f7e2394bae77e94b"
+Nov 04 02:58:02 master-centos kubelet[394]: E1104 02:58:02.679598     394 cni.go:310] Error adding network: open /run/flannel/subnet.env: no such file or directory
+Nov 04 02:58:02 master-centos kubelet[394]: E1104 02:58:02.679622     394 cni.go:278] Error while adding to cni network: open /run/flannel/subnet.env: no such file or directory
+Nov 04 02:58:02 master-centos kubelet[394]: E1104 02:58:02.855001     394 remote_runtime.go:96] RunPodSandbox from runtime service failed: rpc error: code = Unknown desc = failed to set up sandbox container "b3708a8c3647457d0fa8bef7cb8b17910e04aefa7d30b4e96e9caa9d49f0440b" network for pod "coredns-576cbf47c7-75ghr": NetworkPlugin cni failed to set up pod "coredns-576cbf47c7-75ghr_kube-system" network: open /run/flannel/subnet.env: no such file or directory
+Nov 04 02:58:02 master-centos kubelet[394]: E1104 02:58:02.855060     394 kuberuntime_sandbox.go:65] CreatePodSandbox for pod "coredns-576cbf47c7-75ghr_kube-system(950c1401-dfdb-11e8-94a3-42010a8e0002)" failed: rpc error: code = Unknown desc = failed to set up sandbox container "b3708a8c3647457d0fa8bef7cb8b17910e04aefa7d30b4e96e9caa9d49f0440b" network for pod "coredns-576cbf47c7-75ghr": NetworkPlugin cni failed to set up pod "coredns-576cbf47c7-75ghr_kube-system" network: open /run/flannel/subnet.env: no such file or directory
+Nov 04 02:58:02 master-centos kubelet[394]: E1104 02:58:02.855076     394 kuberuntime_manager.go:657] createPodSandbox for pod "coredns-576cbf47c7-75ghr_kube-system(950c1401-dfdb-11e8-94a3-42010a8e0002)" failed: rpc error: code = Unknown desc = failed to set up sandbox container "b3708a8c3647457d0fa8bef7cb8b17910e04aefa7d30b4e96e9caa9d49f0440b" network for pod "coredns-576cbf47c7-75ghr": NetworkPlugin cni failed to set up pod "coredns-576cbf47c7-75ghr_kube-system" network: open /run/flannel/subnet.env: no such file or directory
+Nov 04 02:58:02 master-centos kubelet[394]: E1104 02:58:02.855189     394 pod_workers.go:186] Error syncing pod 950c1401-dfdb-11e8-94a3-42010a8e0002 ("coredns-576cbf47c7-75ghr_kube-system(950c1401-dfdb-11e8-94a3-42010a8e0002)"), skipping: failed to "CreatePodSandbox" for "coredns-576cbf47c7-75ghr_kube-system(950c1401-dfdb-11e8-94a3-42010a8e0002)" with CreatePodSandboxError: "CreatePodSandbox for pod \"coredns-576cbf47c7-75ghr_kube-system(950c1401-dfdb-11e8-94a3-42010a8e0002)\" failed: rpc error: code = Unknown desc = failed to set up sandbox container \"b3708a8c3647457d0fa8bef7cb8b17910e04aefa7d30b4e96e9caa9d49f0440b\" network for pod \"coredns-576cbf47c7-75ghr\": NetworkPlugin cni failed to set up pod \"coredns-576cbf47c7-75ghr_kube-system\" network: open /run/flannel/subnet.env: no such file or directory"
+Nov 04 02:58:03 master-centos kubelet[394]: W1104 02:58:03.376694     394 docker_sandbox.go:375] failed to read pod IP from plugin/docker: NetworkPlugin cni failed on the status hook for pod "coredns-576cbf47c7-75ghr_kube-system": CNI failed to retrieve network namespace path: cannot find network namespace for the terminated container "b3708a8c3647457d0fa8bef7cb8b17910e04aefa7d30b4e96e9caa9d49f0440b"
+Nov 04 02:58:03 master-centos kubelet[394]: W1104 02:58:03.379384     394 pod_container_deletor.go:75] Container "44ed093393dbfa0d25e94c2547f4b24aed6818438a95d4c8f7e2394bae77e94b" not found in pod's containers
+Nov 04 02:58:03 master-centos kubelet[394]: W1104 02:58:03.379448     394 pod_container_deletor.go:75] Container "b3708a8c3647457d0fa8bef7cb8b17910e04aefa7d30b4e96e9caa9d49f0440b" not found in pod's containers
+Nov 04 02:58:03 master-centos kubelet[394]: W1104 02:58:03.383365     394 cni.go:293] CNI failed to retrieve network namespace path: cannot find network namespace for the terminated container "b3708a8c3647457d0fa8bef7cb8b17910e04aefa7d30b4e96e9caa9d49f0440b"
+Nov 04 02:58:03 master-centos kubelet[394]: E1104 02:58:03.783332     394 cni.go:310] Error adding network: open /run/flannel/subnet.env: no such file or directory
+Nov 04 02:58:03 master-centos kubelet[394]: E1104 02:58:03.783389     394 cni.go:278] Error while adding to cni network: open /run/flannel/subnet.env: no such file or directory
+Nov 04 02:58:03 master-centos kubelet[394]: E1104 02:58:03.960954     394 remote_runtime.go:96] RunPodSandbox from runtime service failed: rpc error: code = Unknown desc = failed to set up sandbox container "4248ed2f9c509701272fa8d5e29182b6456118bbed176d664968295754a34537" network for pod "coredns-576cbf47c7-75ghr": NetworkPlugin cni failed to set up pod "coredns-576cbf47c7-75ghr_kube-system" network: open /run/flannel/subnet.env: no such file or directory
+Nov 04 02:58:03 master-centos kubelet[394]: E1104 02:58:03.961005     394 kuberuntime_sandbox.go:65] CreatePodSandbox for pod "coredns-576cbf47c7-75ghr_kube-system(950c1401-dfdb-11e8-94a3-42010a8e0002)" failed: rpc error: code = Unknown desc = failed to set up sandbox container "4248ed2f9c509701272fa8d5e29182b6456118bbed176d664968295754a34537" network for pod "coredns-576cbf47c7-75ghr": NetworkPlugin cni failed to set up pod "coredns-576cbf47c7-75ghr_kube-system" network: open /run/flannel/subnet.env: no such file or directory
+Nov 04 02:58:03 master-centos kubelet[394]: E1104 02:58:03.961020     394 kuberuntime_manager.go:657] createPodSandbox for pod "coredns-576cbf47c7-75ghr_kube-system(950c1401-dfdb-11e8-94a3-42010a8e0002)" failed: rpc error: code = Unknown desc = failed to set up sandbox container "4248ed2f9c509701272fa8d5e29182b6456118bbed176d664968295754a34537" network for pod "coredns-576cbf47c7-75ghr": NetworkPlugin cni failed to set up pod "coredns-576cbf47c7-75ghr_kube-system" network: open /run/flannel/subnet.env: no such file or directory
+Nov 04 02:58:03 master-centos kubelet[394]: E1104 02:58:03.961082     394 pod_workers.go:186] Error syncing pod 950c1401-dfdb-11e8-94a3-42010a8e0002 ("coredns-576cbf47c7-75ghr_kube-system(950c1401-dfdb-11e8-94a3-42010a8e0002)"), skipping: failed to "CreatePodSandbox" for "coredns-576cbf47c7-75ghr_kube-system(950c1401-dfdb-11e8-94a3-42010a8e0002)" with CreatePodSandboxError: "CreatePodSandbox for pod \"coredns-576cbf47c7-75ghr_kube-system(950c1401-dfdb-11e8-94a3-42010a8e0002)\" failed: rpc error: code = Unknown desc = failed to set up sandbox container \"4248ed2f9c509701272fa8d5e29182b6456118bbed176d664968295754a34537\" network for pod \"coredns-576cbf47c7-75ghr\": NetworkPlugin cni failed to set up pod \"coredns-576cbf47c7-75ghr_kube-system\" network: open /run/flannel/subnet.env: no such file or directory"
+Nov 04 02:58:04 master-centos kubelet[394]: W1104 02:58:04.510297     394 docker_sandbox.go:375] failed to read pod IP from plugin/docker: NetworkPlugin cni failed on the status hook for pod "coredns-576cbf47c7-75ghr_kube-system": CNI failed to retrieve network namespace path: cannot find network namespace for the terminated container "4248ed2f9c509701272fa8d5e29182b6456118bbed176d664968295754a34537"
+Nov 04 02:58:04 master-centos kubelet[394]: W1104 02:58:04.515838     394 pod_container_deletor.go:75] Container "4248ed2f9c509701272fa8d5e29182b6456118bbed176d664968295754a34537" not found in pod's containers
+Nov 04 02:58:04 master-centos kubelet[394]: W1104 02:58:04.518327     394 cni.go:293] CNI failed to retrieve network namespace path: cannot find network namespace for the terminated container "4248ed2f9c509701272fa8d5e29182b6456118bbed176d664968295754a34537"
+Nov 04 02:58:04 master-centos kubelet[394]: E1104 02:58:04.824193     394 cni.go:310] Error adding network: open /run/flannel/subnet.env: no such file or directory
+Nov 04 02:58:04 master-centos kubelet[394]: E1104 02:58:04.824223     394 cni.go:278] Error while adding to cni network: open /run/flannel/subnet.env: no such file or directory
+Nov 04 02:58:05 master-centos kubelet[394]: E1104 02:58:05.004766     394 remote_runtime.go:96] RunPodSandbox from runtime service failed: rpc error: code = Unknown desc = failed to set up sandbox container "50aa48103b5ffd9f97ea7938fac7541d3d074c84df999e65f09b303cff8107cc" network for pod "coredns-576cbf47c7-75ghr": NetworkPlugin cni failed to set up pod "coredns-576cbf47c7-75ghr_kube-system" network: open /run/flannel/subnet.env: no such file or directory
+Nov 04 02:58:05 master-centos kubelet[394]: E1104 02:58:05.004816     394 kuberuntime_sandbox.go:65] CreatePodSandbox for pod "coredns-576cbf47c7-75ghr_kube-system(950c1401-dfdb-11e8-94a3-42010a8e0002)" failed: rpc error: code = Unknown desc = failed to set up sandbox container "50aa48103b5ffd9f97ea7938fac7541d3d074c84df999e65f09b303cff8107cc" network for pod "coredns-576cbf47c7-75ghr": NetworkPlugin cni failed to set up pod "coredns-576cbf47c7-75ghr_kube-system" network: open /run/flannel/subnet.env: no such file or directory
+Nov 04 02:58:05 master-centos kubelet[394]: E1104 02:58:05.004832     394 kuberuntime_manager.go:657] createPodSandbox for pod "coredns-576cbf47c7-75ghr_kube-system(950c1401-dfdb-11e8-94a3-42010a8e0002)" failed: rpc error: code = Unknown desc = failed to set up sandbox container "50aa48103b5ffd9f97ea7938fac7541d3d074c84df999e65f09b303cff8107cc" network for pod "coredns-576cbf47c7-75ghr": NetworkPlugin cni failed to set up pod "coredns-576cbf47c7-75ghr_kube-system" network: open /run/flannel/subnet.env: no such file or directory
+Nov 04 02:58:05 master-centos kubelet[394]: E1104 02:58:05.004898     394 pod_workers.go:186] Error syncing pod 950c1401-dfdb-11e8-94a3-42010a8e0002 ("coredns-576cbf47c7-75ghr_kube-system(950c1401-dfdb-11e8-94a3-42010a8e0002)"), skipping: failed to "CreatePodSandbox" for "coredns-576cbf47c7-75ghr_kube-system(950c1401-dfdb-11e8-94a3-42010a8e0002)" with CreatePodSandboxError: "CreatePodSandbox for pod \"coredns-576cbf47c7-75ghr_kube-system(950c1401-dfdb-11e8-94a3-42010a8e0002)\" failed: rpc error: code = Unknown desc = failed to set up sandbox container \"50aa48103b5ffd9f97ea7938fac7541d3d074c84df999e65f09b303cff8107cc\" network for pod \"coredns-576cbf47c7-75ghr\": NetworkPlugin cni failed to set up pod \"coredns-576cbf47c7-75ghr_kube-system\" network: open /run/flannel/subnet.env: no such file or directory"
+Nov 04 02:58:05 master-centos kubelet[394]: W1104 02:58:05.529265     394 docker_sandbox.go:375] failed to read pod IP from plugin/docker: NetworkPlugin cni failed on the status hook for pod "coredns-576cbf47c7-75ghr_kube-system": CNI failed to retrieve network namespace path: cannot find network namespace for the terminated container "50aa48103b5ffd9f97ea7938fac7541d3d074c84df999e65f09b303cff8107cc"
+Nov 04 02:58:05 master-centos kubelet[394]: W1104 02:58:05.535099     394 pod_container_deletor.go:75] Container "50aa48103b5ffd9f97ea7938fac7541d3d074c84df999e65f09b303cff8107cc" not found in pod's containers
+Nov 04 02:58:05 master-centos kubelet[394]: W1104 02:58:05.537156     394 cni.go:293] CNI failed to retrieve network namespace path: cannot find network namespace for the terminated container "50aa48103b5ffd9f97ea7938fac7541d3d074c84df999e65f09b303cff8107cc"
+Nov 04 02:58:05 master-centos kubelet[394]: E1104 02:58:05.823240     394 cni.go:310] Error adding network: open /run/flannel/subnet.env: no such file or directory
+Nov 04 02:58:05 master-centos kubelet[394]: E1104 02:58:05.823270     394 cni.go:278] Error while adding to cni network: open /run/flannel/subnet.env: no such file or directory
+Nov 04 02:58:05 master-centos kubelet[394]: E1104 02:58:05.986555     394 remote_runtime.go:96] RunPodSandbox from runtime service failed: rpc error: code = Unknown desc = failed to set up sandbox container "cc3c8e2f2288b07908cabfb9ff2c9e0db1fa9858273346529a34a9c441d9e910" network for pod "coredns-576cbf47c7-75ghr": NetworkPlugin cni failed to set up pod "coredns-576cbf47c7-75ghr_kube-system" network: open /run/flannel/subnet.env: no such file or directory
+Nov 04 02:58:05 master-centos kubelet[394]: E1104 02:58:05.986606     394 kuberuntime_sandbox.go:65] CreatePodSandbox for pod "coredns-576cbf47c7-75ghr_kube-system(950c1401-dfdb-11e8-94a3-42010a8e0002)" failed: rpc error: code = Unknown desc = failed to set up sandbox container "cc3c8e2f2288b07908cabfb9ff2c9e0db1fa9858273346529a34a9c441d9e910" network for pod "coredns-576cbf47c7-75ghr": NetworkPlugin cni failed to set up pod "coredns-576cbf47c7-75ghr_kube-system" network: open /run/flannel/subnet.env: no such file or directory
+Nov 04 02:58:05 master-centos kubelet[394]: E1104 02:58:05.986622     394 kuberuntime_manager.go:657] createPodSandbox for pod "coredns-576cbf47c7-75ghr_kube-system(950c1401-dfdb-11e8-94a3-42010a8e0002)" failed: rpc error: code = Unknown desc = failed to set up sandbox container "cc3c8e2f2288b07908cabfb9ff2c9e0db1fa9858273346529a34a9c441d9e910" network for pod "coredns-576cbf47c7-75ghr": NetworkPlugin cni failed to set up pod "coredns-576cbf47c7-75ghr_kube-system" network: open /run/flannel/subnet.env: no such file or directory
+Nov 04 02:58:05 master-centos kubelet[394]: E1104 02:58:05.986687     394 pod_workers.go:186] Error syncing pod 950c1401-dfdb-11e8-94a3-42010a8e0002 ("coredns-576cbf47c7-75ghr_kube-system(950c1401-dfdb-11e8-94a3-42010a8e0002)"), skipping: failed to "CreatePodSandbox" for "coredns-576cbf47c7-75ghr_kube-system(950c1401-dfdb-11e8-94a3-42010a8e0002)" with CreatePodSandboxError: "CreatePodSandbox for pod \"coredns-576cbf47c7-75ghr_kube-system(950c1401-dfdb-11e8-94a3-42010a8e0002)\" failed: rpc error: code = Unknown desc = failed to set up sandbox container \"cc3c8e2f2288b07908cabfb9ff2c9e0db1fa9858273346529a34a9c441d9e910\" network for pod \"coredns-576cbf47c7-75ghr\": NetworkPlugin cni failed to set up pod \"coredns-576cbf47c7-75ghr_kube-system\" network: open /run/flannel/subnet.env: no such file or directory"
+Nov 04 02:58:06 master-centos kubelet[394]: W1104 02:58:06.548754     394 docker_sandbox.go:375] failed to read pod IP from plugin/docker: NetworkPlugin cni failed on the status hook for pod "coredns-576cbf47c7-75ghr_kube-system": CNI failed to retrieve network namespace path: cannot find network namespace for the terminated container "cc3c8e2f2288b07908cabfb9ff2c9e0db1fa9858273346529a34a9c441d9e910"
+Nov 04 02:58:06 master-centos kubelet[394]: W1104 02:58:06.554152     394 pod_container_deletor.go:75] Container "cc3c8e2f2288b07908cabfb9ff2c9e0db1fa9858273346529a34a9c441d9e910" not found in pod's containers
+Nov 04 02:58:06 master-centos kubelet[394]: W1104 02:58:06.557771     394 cni.go:293] CNI failed to retrieve network namespace path: cannot find network namespace for the terminated container "cc3c8e2f2288b07908cabfb9ff2c9e0db1fa9858273346529a34a9c441d9e910"
+Nov 04 02:58:06 master-centos kubelet[394]: E1104 02:58:06.575548     394 pod_workers.go:186] Error syncing pod 0e9fb516-dfda-11e8-94a3-42010a8e0002 ("kube-flannel-ds-amd64-hb6sq_kube-system(0e9fb516-dfda-11e8-94a3-42010a8e0002)"), skipping: failed to "StartContainer" for "kube-flannel" with CrashLoopBackOff: "Back-off 10s restarting failed container=kube-flannel pod=kube-flannel-ds-amd64-hb6sq_kube-system(0e9fb516-dfda-11e8-94a3-42010a8e0002)"
+Nov 04 02:58:06 master-centos kubelet[394]: E1104 02:58:06.874537     394 cni.go:310] Error adding network: open /run/flannel/subnet.env: no such file or directory
+Nov 04 02:58:06 master-centos kubelet[394]: E1104 02:58:06.874565     394 cni.go:278] Error while adding to cni network: open /run/flannel/subnet.env: no such file or directory
+Nov 04 02:58:07 master-centos kubelet[394]: E1104 02:58:07.060437     394 remote_runtime.go:96] RunPodSandbox from runtime service failed: rpc error: code = Unknown desc = failed to set up sandbox container "3b8301863a62f2303cf93d70e8eda5b0e6d5442758e9c8da92519f6c73001700" network for pod "coredns-576cbf47c7-75ghr": NetworkPlugin cni failed to set up pod "coredns-576cbf47c7-75ghr_kube-system" network: open /run/flannel/subnet.env: no such file or directory
+Nov 04 02:58:07 master-centos kubelet[394]: E1104 02:58:07.060489     394 kuberuntime_sandbox.go:65] CreatePodSandbox for pod "coredns-576cbf47c7-75ghr_kube-system(950c1401-dfdb-11e8-94a3-42010a8e0002)" failed: rpc error: code = Unknown desc = failed to set up sandbox container "3b8301863a62f2303cf93d70e8eda5b0e6d5442758e9c8da92519f6c73001700" network for pod "coredns-576cbf47c7-75ghr": NetworkPlugin cni failed to set up pod "coredns-576cbf47c7-75ghr_kube-system" network: open /run/flannel/subnet.env: no such file or directory
+Nov 04 02:58:07 master-centos kubelet[394]: E1104 02:58:07.060504     394 kuberuntime_manager.go:657] createPodSandbox for pod "coredns-576cbf47c7-75ghr_kube-system(950c1401-dfdb-11e8-94a3-42010a8e0002)" failed: rpc error: code = Unknown desc = failed to set up sandbox container "3b8301863a62f2303cf93d70e8eda5b0e6d5442758e9c8da92519f6c73001700" network for pod "coredns-576cbf47c7-75ghr": NetworkPlugin cni failed to set up pod "coredns-576cbf47c7-75ghr_kube-system" network: open /run/flannel/subnet.env: no such file or directory
+Nov 04 02:58:07 master-centos kubelet[394]: E1104 02:58:07.060569     394 pod_workers.go:186] Error syncing pod 950c1401-dfdb-11e8-94a3-42010a8e0002 ("coredns-576cbf47c7-75ghr_kube-system(950c1401-dfdb-11e8-94a3-42010a8e0002)"), skipping: failed to "CreatePodSandbox" for "coredns-576cbf47c7-75ghr_kube-system(950c1401-dfdb-11e8-94a3-42010a8e0002)" with CreatePodSandboxError: "CreatePodSandbox for pod \"coredns-576cbf47c7-75ghr_kube-system(950c1401-dfdb-11e8-94a3-42010a8e0002)\" failed: rpc error: code = Unknown desc = failed to set up sandbox container \"3b8301863a62f2303cf93d70e8eda5b0e6d5442758e9c8da92519f6c73001700\" network for pod \"coredns-576cbf47c7-75ghr\": NetworkPlugin cni failed to set up pod \"coredns-576cbf47c7-75ghr_kube-system\" network: open /run/flannel/subnet.env: no such file or directory"
+Nov 04 02:58:07 master-centos kubelet[394]: W1104 02:58:07.589705     394 docker_sandbox.go:375] failed to read pod IP from plugin/docker: NetworkPlugin cni failed on the status hook for pod "coredns-576cbf47c7-75ghr_kube-system": CNI failed to retrieve network namespace path: cannot find network namespace for the terminated container "3b8301863a62f2303cf93d70e8eda5b0e6d5442758e9c8da92519f6c73001700"
+Nov 04 02:58:07 master-centos kubelet[394]: W1104 02:58:07.596006     394 pod_container_deletor.go:75] Container "3b8301863a62f2303cf93d70e8eda5b0e6d5442758e9c8da92519f6c73001700" not found in pod's containers
+Nov 04 02:58:07 master-centos kubelet[394]: W1104 02:58:07.601024     394 cni.go:293] CNI failed to retrieve network namespace path: cannot find network namespace for the terminated container "3b8301863a62f2303cf93d70e8eda5b0e6d5442758e9c8da92519f6c73001700"
+Nov 04 02:58:07 master-centos systemd[1]: Stopping kubelet: The Kubernetes Node Agent...
+-- Subject: Unit kubelet.service has begun shutting down
+-- Defined-By: systemd
+-- Support: http://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit kubelet.service has begun shutting down.
+Nov 04 02:58:07 master-centos systemd[1]: Stopped kubelet: The Kubernetes Node Agent.
+-- Subject: Unit kubelet.service has finished shutting down
+-- Defined-By: systemd
+-- Support: http://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit kubelet.service has finished shutting down.
+Nov 04 02:58:31 master-centos systemd[1]: Started kubelet: The Kubernetes Node Agent.
+-- Subject: Unit kubelet.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit kubelet.service has finished starting up.
+-- 
+-- The start-up result is done.
+Nov 04 02:58:31 master-centos systemd[1]: Starting kubelet: The Kubernetes Node Agent...
+-- Subject: Unit kubelet.service has begun start-up
+-- Defined-By: systemd
+-- Support: http://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit kubelet.service has begun starting up.
+Nov 04 02:58:31 master-centos kubelet[4566]: Flag --cgroup-driver has been deprecated, This parameter should be set via the config file specified by the Kubelet's --config flag. See https://kubernetes.io/docs/tasks/administer-cluster/kubelet-config-file/ for more information.
+Nov 04 02:58:31 master-centos kubelet[4566]: Flag --cgroup-driver has been deprecated, This parameter should be set via the config file specified by the Kubelet's --config flag. See https://kubernetes.io/docs/tasks/administer-cluster/kubelet-config-file/ for more information.
+Nov 04 02:58:31 master-centos kubelet[4566]: I1104 02:58:31.764899    4566 server.go:408] Version: v1.12.2
+Nov 04 02:58:31 master-centos kubelet[4566]: I1104 02:58:31.765125    4566 plugins.go:99] No cloud provider specified.
+Nov 04 02:58:31 master-centos kubelet[4566]: F1104 02:58:31.765179    4566 server.go:262] failed to run Kubelet: unable to load bootstrap kubeconfig: stat /etc/kubernetes/bootstrap-kubelet.conf: no such file or directory
+Nov 04 02:58:31 master-centos systemd[1]: kubelet.service: main process exited, code=exited, status=255/n/a
+Nov 04 02:58:31 master-centos systemd[1]: Unit kubelet.service entered failed state.
+Nov 04 02:58:31 master-centos systemd[1]: kubelet.service failed.
+Nov 04 02:58:41 master-centos systemd[1]: kubelet.service holdoff time over, scheduling restart.
+Nov 04 02:58:41 master-centos systemd[1]: Started kubelet: The Kubernetes Node Agent.
+-- Subject: Unit kubelet.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit kubelet.service has finished starting up.
+-- 
+-- The start-up result is done.
+Nov 04 02:58:41 master-centos systemd[1]: Starting kubelet: The Kubernetes Node Agent...
+-- Subject: Unit kubelet.service has begun start-up
+-- Defined-By: systemd
+-- Support: http://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit kubelet.service has begun starting up.
+Nov 04 02:58:42 master-centos kubelet[4578]: Flag --cgroup-driver has been deprecated, This parameter should be set via the config file specified by the Kubelet's --config flag. See https://kubernetes.io/docs/tasks/administer-cluster/kubelet-config-file/ for more information.
+Nov 04 02:58:42 master-centos kubelet[4578]: Flag --cgroup-driver has been deprecated, This parameter should be set via the config file specified by the Kubelet's --config flag. See https://kubernetes.io/docs/tasks/administer-cluster/kubelet-config-file/ for more information.
+Nov 04 02:58:42 master-centos kubelet[4578]: I1104 02:58:42.097826    4578 server.go:408] Version: v1.12.2
+Nov 04 02:58:42 master-centos kubelet[4578]: I1104 02:58:42.098111    4578 plugins.go:99] No cloud provider specified.
+Nov 04 02:58:42 master-centos kubelet[4578]: E1104 02:58:42.127659    4578 certificate_manager.go:348] Failed while requesting a signed certificate from the master: cannot create certificate signing request: Post https://10.142.0.2:6443/apis/certificates.k8s.io/v1beta1/certificatesigningrequests: dial tcp 10.142.0.2:6443: connect: connection refused
+Nov 04 02:58:42 master-centos kubelet[4578]: I1104 02:58:42.144838    4578 server.go:667] --cgroups-per-qos enabled, but --cgroup-root was not specified.  defaulting to /
+Nov 04 02:58:42 master-centos kubelet[4578]: I1104 02:58:42.145197    4578 container_manager_linux.go:247] container manager verified user specified cgroup-root exists: []
+Nov 04 02:58:42 master-centos kubelet[4578]: I1104 02:58:42.145221    4578 container_manager_linux.go:252] Creating Container Manager object based on Node Config: {RuntimeCgroupsName: SystemCgroupsName: KubeletCgroupsName: ContainerRuntime:docker CgroupsPerQOS:true CgroupRoot:/ CgroupDriver:cgroupfs KubeletRootDir:/var/lib/kubelet ProtectKernelDefaults:false NodeAllocatableConfig:{KubeReservedCgroupName: SystemReservedCgroupName: EnforceNodeAllocatable:map[pods:{}] KubeReserved:map[] SystemReserved:map[] HardEvictionThresholds:[{Signal:imagefs.available Operator:LessThan Value:{Quantity:<nil> Percentage:0.15} GracePeriod:0s MinReclaim:<nil>} {Signal:memory.available Operator:LessThan Value:{Quantity:100Mi Percentage:0} GracePeriod:0s MinReclaim:<nil>} {Signal:nodefs.available Operator:LessThan Value:{Quantity:<nil> Percentage:0.1} GracePeriod:0s MinReclaim:<nil>} {Signal:nodefs.inodesFree Operator:LessThan Value:{Quantity:<nil> Percentage:0.05} GracePeriod:0s MinReclaim:<nil>}]} QOSReserved:map[] ExperimentalCPUManagerPolicy:none ExperimentalCPUManagerReconcilePeriod:10s ExperimentalPodPidsLimit:-1 EnforceCPULimits:true CPUCFSQuotaPeriod:100ms}
+Nov 04 02:58:42 master-centos kubelet[4578]: I1104 02:58:42.145375    4578 container_manager_linux.go:271] Creating device plugin manager: true
+Nov 04 02:58:42 master-centos kubelet[4578]: I1104 02:58:42.145479    4578 state_mem.go:36] [cpumanager] initializing new in-memory state store
+Nov 04 02:58:42 master-centos kubelet[4578]: I1104 02:58:42.148727    4578 kubelet.go:279] Adding pod path: /etc/kubernetes/manifests
+Nov 04 02:58:42 master-centos kubelet[4578]: I1104 02:58:42.148783    4578 kubelet.go:304] Watching apiserver
+Nov 04 02:58:42 master-centos kubelet[4578]: E1104 02:58:42.155041    4578 reflector.go:134] k8s.io/kubernetes/pkg/kubelet/config/apiserver.go:47: Failed to list *v1.Pod: Get https://10.142.0.2:6443/api/v1/pods?fieldSelector=spec.nodeName%3Dmaster-centos&limit=500&resourceVersion=0: dial tcp 10.142.0.2:6443: connect: connection refused
+Nov 04 02:58:42 master-centos kubelet[4578]: I1104 02:58:42.155450    4578 client.go:75] Connecting to docker on unix:///var/run/docker.sock
+Nov 04 02:58:42 master-centos kubelet[4578]: I1104 02:58:42.155472    4578 client.go:104] Start docker client with request timeout=2m0s
+Nov 04 02:58:42 master-centos kubelet[4578]: E1104 02:58:42.156501    4578 reflector.go:134] k8s.io/kubernetes/pkg/kubelet/kubelet.go:442: Failed to list *v1.Service: Get https://10.142.0.2:6443/api/v1/services?limit=500&resourceVersion=0: dial tcp 10.142.0.2:6443: connect: connection refused
+Nov 04 02:58:42 master-centos kubelet[4578]: E1104 02:58:42.156611    4578 reflector.go:134] k8s.io/kubernetes/pkg/kubelet/kubelet.go:451: Failed to list *v1.Node: Get https://10.142.0.2:6443/api/v1/nodes?fieldSelector=metadata.name%3Dmaster-centos&limit=500&resourceVersion=0: dial tcp 10.142.0.2:6443: connect: connection refused
+Nov 04 02:58:42 master-centos kubelet[4578]: W1104 02:58:42.165965    4578 docker_service.go:540] Hairpin mode set to "promiscuous-bridge" but kubenet is not enabled, falling back to "hairpin-veth"
+Nov 04 02:58:42 master-centos kubelet[4578]: I1104 02:58:42.166004    4578 docker_service.go:236] Hairpin mode set to "hairpin-veth"
+Nov 04 02:58:42 master-centos kubelet[4578]: W1104 02:58:42.166136    4578 cni.go:188] Unable to update cni config: No networks found in /etc/cni/net.d
+Nov 04 02:58:42 master-centos kubelet[4578]: W1104 02:58:42.168601    4578 hostport_manager.go:68] The binary conntrack is not installed, this can cause failures in network connection cleanup.
+Nov 04 02:58:42 master-centos kubelet[4578]: W1104 02:58:42.168669    4578 cni.go:188] Unable to update cni config: No networks found in /etc/cni/net.d
+Nov 04 02:58:42 master-centos kubelet[4578]: I1104 02:58:42.168695    4578 docker_service.go:251] Docker cri networking managed by cni
+Nov 04 02:58:42 master-centos kubelet[4578]: I1104 02:58:42.179465    4578 docker_service.go:256] Docker Info: &{ID:EVYL:MEYH:GZKA:5QO5:5OI3:GAJW:32QC:NKUJ:U3CT:7JZL:FJTW:2IM7 Containers:0 ContainersRunning:0 ContainersPaused:0 ContainersStopped:0 Images:8 Driver:overlay2 DriverStatus:[[Backing Filesystem xfs] [Supports d_type true] [Native Overlay Diff true]] SystemStatus:[] Plugins:{Volume:[local] Network:[bridge host macvlan null overlay] Authorization:[] Log:[awslogs fluentd gcplogs gelf journald json-file logentries splunk syslog]} MemoryLimit:true SwapLimit:true KernelMemory:true CPUCfsPeriod:true CPUCfsQuota:true CPUShares:true CPUSet:true IPv4Forwarding:true BridgeNfIptables:true BridgeNfIP6tables:true Debug:false NFd:25 OomKillDisable:true NGoroutines:46 SystemTime:2018-11-04T02:58:42.170486045Z LoggingDriver:json-file CgroupDriver:cgroupfs NEventsListener:0 KernelVersion:3.10.0-862.14.4.el7.x86_64 OperatingSystem:CentOS Linux 7 (Core) OSType:linux Architecture:x86_64 IndexServerAddress:https://index.docker.io/v1/ RegistryConfig:0xc420c189a0 NCPU:2 MemTotal:7673565184 GenericResources:[] DockerRootDir:/var/lib/docker HTTPProxy: HTTPSProxy: NoProxy: Name:master-centos Labels:[] ExperimentalBuild:false ServerVersion:18.06.1-ce ClusterStore: ClusterAdvertise: Runtimes:map[runc:{Path:docker-runc Args:[]}] DefaultRuntime:runc Swarm:{NodeID: NodeAddr: LocalNodeState:inactive ControlAvailable:false Error: RemoteManagers:[] Nodes:0 Managers:0 Cluster:<nil>} LiveRestoreEnabled:false Isolation: InitBinary:docker-init ContainerdCommit:{ID:468a545b9edcd5932818eb9de8e72413e616e86e Expected:468a545b9edcd5932818eb9de8e72413e616e86e} RuncCommit:{ID:69663f0bd4b60df09991c08812a60108003fa340 Expected:69663f0bd4b60df09991c08812a60108003fa340} InitCommit:{ID:fec3683 Expected:fec3683} SecurityOptions:[name=seccomp,profile=default]}
+Nov 04 02:58:42 master-centos kubelet[4578]: I1104 02:58:42.179590    4578 docker_service.go:269] Setting cgroupDriver to cgroupfs
+Nov 04 02:58:42 master-centos kubelet[4578]: I1104 02:58:42.271443    4578 kuberuntime_manager.go:197] Container runtime docker initialized, version: 18.06.1-ce, apiVersion: 1.38.0
+Nov 04 02:58:42 master-centos kubelet[4578]: I1104 02:58:42.273112    4578 server.go:1013] Started kubelet
+Nov 04 02:58:42 master-centos kubelet[4578]: E1104 02:58:42.273728    4578 kubelet.go:1287] Image garbage collection failed once. Stats initialization may not have completed yet: failed to get imageFs info: unable to find data in memory cache
+Nov 04 02:58:42 master-centos kubelet[4578]: I1104 02:58:42.274295    4578 fs_resource_analyzer.go:66] Starting FS ResourceAnalyzer
+Nov 04 02:58:42 master-centos kubelet[4578]: I1104 02:58:42.274331    4578 status_manager.go:152] Starting to sync pod status with apiserver
+Nov 04 02:58:42 master-centos kubelet[4578]: I1104 02:58:42.274407    4578 kubelet.go:1804] Starting kubelet main sync loop.
+Nov 04 02:58:42 master-centos kubelet[4578]: I1104 02:58:42.274433    4578 kubelet.go:1821] skipping pod synchronization - [container runtime is down PLEG is not healthy: pleg was last seen active 2562047h47m16.854775807s ago; threshold is 3m0s]
+Nov 04 02:58:42 master-centos kubelet[4578]: I1104 02:58:42.274621    4578 server.go:133] Starting to listen on 0.0.0.0:10250
+Nov 04 02:58:42 master-centos kubelet[4578]: I1104 02:58:42.275540    4578 server.go:318] Adding debug handlers to kubelet server.
+Nov 04 02:58:42 master-centos kubelet[4578]: I1104 02:58:42.276926    4578 volume_manager.go:248] Starting Kubelet Volume Manager
+Nov 04 02:58:42 master-centos kubelet[4578]: I1104 02:58:42.279794    4578 desired_state_of_world_populator.go:130] Desired state populator starts to run
+Nov 04 02:58:42 master-centos kubelet[4578]: E1104 02:58:42.289098    4578 event.go:212] Unable to write event: 'Post https://10.142.0.2:6443/api/v1/namespaces/default/events: dial tcp 10.142.0.2:6443: connect: connection refused' (may retry after sleeping)
+Nov 04 02:58:42 master-centos kubelet[4578]: W1104 02:58:42.294234    4578 cni.go:188] Unable to update cni config: No networks found in /etc/cni/net.d
+Nov 04 02:58:42 master-centos kubelet[4578]: E1104 02:58:42.294428    4578 kubelet.go:2167] Container runtime network not ready: NetworkReady=false reason:NetworkPluginNotReady message:docker: network plugin is not ready: cni config uninitialized
+Nov 04 02:58:42 master-centos kubelet[4578]: I1104 02:58:42.374600    4578 kubelet.go:1821] skipping pod synchronization - [container runtime is down]
+Nov 04 02:58:42 master-centos kubelet[4578]: E1104 02:58:42.377122    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:42 master-centos kubelet[4578]: I1104 02:58:42.377171    4578 kubelet_node_status.go:276] Setting node annotation to enable volume controller attach/detach
+Nov 04 02:58:42 master-centos kubelet[4578]: I1104 02:58:42.387120    4578 kubelet_node_status.go:70] Attempting to register node master-centos
+Nov 04 02:58:42 master-centos kubelet[4578]: E1104 02:58:42.388246    4578 kubelet_node_status.go:92] Unable to register node "master-centos" with API server: Post https://10.142.0.2:6443/api/v1/nodes: dial tcp 10.142.0.2:6443: connect: connection refused
+Nov 04 02:58:42 master-centos kubelet[4578]: I1104 02:58:42.424980    4578 kubelet_node_status.go:276] Setting node annotation to enable volume controller attach/detach
+Nov 04 02:58:42 master-centos kubelet[4578]: I1104 02:58:42.427503    4578 cpu_manager.go:155] [cpumanager] starting with none policy
+Nov 04 02:58:42 master-centos kubelet[4578]: I1104 02:58:42.427520    4578 cpu_manager.go:156] [cpumanager] reconciling every 10s
+Nov 04 02:58:42 master-centos kubelet[4578]: I1104 02:58:42.427529    4578 policy_none.go:42] [cpumanager] none policy: Start
+Nov 04 02:58:42 master-centos kubelet[4578]: W1104 02:58:42.428249    4578 manager.go:527] Failed to retrieve checkpoint for "kubelet_internal_checkpoint": checkpoint is not found
+Nov 04 02:58:42 master-centos kubelet[4578]: E1104 02:58:42.428597    4578 eviction_manager.go:243] eviction manager: failed to get get summary stats: failed to get node info: node "master-centos" not found
+Nov 04 02:58:42 master-centos kubelet[4578]: E1104 02:58:42.477415    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:42 master-centos kubelet[4578]: I1104 02:58:42.575052    4578 kubelet_node_status.go:276] Setting node annotation to enable volume controller attach/detach
+Nov 04 02:58:42 master-centos kubelet[4578]: E1104 02:58:42.577597    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:42 master-centos kubelet[4578]: I1104 02:58:42.580332    4578 kubelet_node_status.go:276] Setting node annotation to enable volume controller attach/detach
+Nov 04 02:58:42 master-centos kubelet[4578]: I1104 02:58:42.580490    4578 kubelet_node_status.go:276] Setting node annotation to enable volume controller attach/detach
+Nov 04 02:58:42 master-centos kubelet[4578]: I1104 02:58:42.583908    4578 reconciler.go:207] operationExecutor.VerifyControllerAttachedVolume started for volume "kubeconfig" (UniqueName: "kubernetes.io/host-path/ee7b1077c61516320f4273309e9b4690-kubeconfig") pod "kube-scheduler-master-centos" (UID: "ee7b1077c61516320f4273309e9b4690")
+Nov 04 02:58:42 master-centos kubelet[4578]: W1104 02:58:42.584662    4578 status_manager.go:485] Failed to get status for pod "kube-scheduler-master-centos_kube-system(ee7b1077c61516320f4273309e9b4690)": Get https://10.142.0.2:6443/api/v1/namespaces/kube-system/pods/kube-scheduler-master-centos: dial tcp 10.142.0.2:6443: connect: connection refused
+Nov 04 02:58:42 master-centos kubelet[4578]: I1104 02:58:42.585836    4578 kubelet_node_status.go:276] Setting node annotation to enable volume controller attach/detach
+Nov 04 02:58:42 master-centos kubelet[4578]: I1104 02:58:42.585880    4578 kubelet_node_status.go:276] Setting node annotation to enable volume controller attach/detach
+Nov 04 02:58:42 master-centos kubelet[4578]: W1104 02:58:42.588824    4578 status_manager.go:485] Failed to get status for pod "etcd-master-centos_kube-system(48889bdd121b4da9b8018bda503e06dc)": Get https://10.142.0.2:6443/api/v1/namespaces/kube-system/pods/etcd-master-centos: dial tcp 10.142.0.2:6443: connect: connection refused
+Nov 04 02:58:42 master-centos kubelet[4578]: I1104 02:58:42.588886    4578 kubelet_node_status.go:276] Setting node annotation to enable volume controller attach/detach
+Nov 04 02:58:42 master-centos kubelet[4578]: I1104 02:58:42.590655    4578 kubelet_node_status.go:276] Setting node annotation to enable volume controller attach/detach
+Nov 04 02:58:42 master-centos kubelet[4578]: I1104 02:58:42.590740    4578 kubelet_node_status.go:276] Setting node annotation to enable volume controller attach/detach
+Nov 04 02:58:42 master-centos kubelet[4578]: I1104 02:58:42.591815    4578 kubelet_node_status.go:70] Attempting to register node master-centos
+Nov 04 02:58:42 master-centos kubelet[4578]: E1104 02:58:42.592271    4578 kubelet_node_status.go:92] Unable to register node "master-centos" with API server: Post https://10.142.0.2:6443/api/v1/nodes: dial tcp 10.142.0.2:6443: connect: connection refused
+Nov 04 02:58:42 master-centos kubelet[4578]: W1104 02:58:42.594003    4578 status_manager.go:485] Failed to get status for pod "kube-apiserver-master-centos_kube-system(71d816856ea6e920781f7edf59100b9d)": Get https://10.142.0.2:6443/api/v1/namespaces/kube-system/pods/kube-apiserver-master-centos: dial tcp 10.142.0.2:6443: connect: connection refused
+Nov 04 02:58:42 master-centos kubelet[4578]: I1104 02:58:42.596820    4578 kubelet_node_status.go:276] Setting node annotation to enable volume controller attach/detach
+Nov 04 02:58:42 master-centos kubelet[4578]: W1104 02:58:42.599114    4578 status_manager.go:485] Failed to get status for pod "kube-controller-manager-master-centos_kube-system(f06e225304582a2f1f513dc7146b9453)": Get https://10.142.0.2:6443/api/v1/namespaces/kube-system/pods/kube-controller-manager-master-centos: dial tcp 10.142.0.2:6443: connect: connection refused
+Nov 04 02:58:42 master-centos kubelet[4578]: E1104 02:58:42.677793    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:42 master-centos kubelet[4578]: I1104 02:58:42.684287    4578 reconciler.go:207] operationExecutor.VerifyControllerAttachedVolume started for volume "k8s-certs" (UniqueName: "kubernetes.io/host-path/f06e225304582a2f1f513dc7146b9453-k8s-certs") pod "kube-controller-manager-master-centos" (UID: "f06e225304582a2f1f513dc7146b9453")
+Nov 04 02:58:42 master-centos kubelet[4578]: I1104 02:58:42.684364    4578 reconciler.go:207] operationExecutor.VerifyControllerAttachedVolume started for volume "kubeconfig" (UniqueName: "kubernetes.io/host-path/f06e225304582a2f1f513dc7146b9453-kubeconfig") pod "kube-controller-manager-master-centos" (UID: "f06e225304582a2f1f513dc7146b9453")
+Nov 04 02:58:42 master-centos kubelet[4578]: I1104 02:58:42.684399    4578 reconciler.go:207] operationExecutor.VerifyControllerAttachedVolume started for volume "etc-pki" (UniqueName: "kubernetes.io/host-path/f06e225304582a2f1f513dc7146b9453-etc-pki") pod "kube-controller-manager-master-centos" (UID: "f06e225304582a2f1f513dc7146b9453")
+Nov 04 02:58:42 master-centos kubelet[4578]: I1104 02:58:42.684426    4578 reconciler.go:207] operationExecutor.VerifyControllerAttachedVolume started for volume "etcd-certs" (UniqueName: "kubernetes.io/host-path/48889bdd121b4da9b8018bda503e06dc-etcd-certs") pod "etcd-master-centos" (UID: "48889bdd121b4da9b8018bda503e06dc")
+Nov 04 02:58:42 master-centos kubelet[4578]: I1104 02:58:42.684449    4578 reconciler.go:207] operationExecutor.VerifyControllerAttachedVolume started for volume "k8s-certs" (UniqueName: "kubernetes.io/host-path/71d816856ea6e920781f7edf59100b9d-k8s-certs") pod "kube-apiserver-master-centos" (UID: "71d816856ea6e920781f7edf59100b9d")
+Nov 04 02:58:42 master-centos kubelet[4578]: I1104 02:58:42.684471    4578 reconciler.go:207] operationExecutor.VerifyControllerAttachedVolume started for volume "ca-certs" (UniqueName: "kubernetes.io/host-path/71d816856ea6e920781f7edf59100b9d-ca-certs") pod "kube-apiserver-master-centos" (UID: "71d816856ea6e920781f7edf59100b9d")
+Nov 04 02:58:42 master-centos kubelet[4578]: I1104 02:58:42.684492    4578 reconciler.go:207] operationExecutor.VerifyControllerAttachedVolume started for volume "etc-pki" (UniqueName: "kubernetes.io/host-path/71d816856ea6e920781f7edf59100b9d-etc-pki") pod "kube-apiserver-master-centos" (UID: "71d816856ea6e920781f7edf59100b9d")
+Nov 04 02:58:42 master-centos kubelet[4578]: I1104 02:58:42.684582    4578 reconciler.go:207] operationExecutor.VerifyControllerAttachedVolume started for volume "etcd-data" (UniqueName: "kubernetes.io/host-path/48889bdd121b4da9b8018bda503e06dc-etcd-data") pod "etcd-master-centos" (UID: "48889bdd121b4da9b8018bda503e06dc")
+Nov 04 02:58:42 master-centos kubelet[4578]: I1104 02:58:42.684608    4578 reconciler.go:207] operationExecutor.VerifyControllerAttachedVolume started for volume "ca-certs" (UniqueName: "kubernetes.io/host-path/f06e225304582a2f1f513dc7146b9453-ca-certs") pod "kube-controller-manager-master-centos" (UID: "f06e225304582a2f1f513dc7146b9453")
+Nov 04 02:58:42 master-centos kubelet[4578]: I1104 02:58:42.684636    4578 reconciler.go:207] operationExecutor.VerifyControllerAttachedVolume started for volume "flexvolume-dir" (UniqueName: "kubernetes.io/host-path/f06e225304582a2f1f513dc7146b9453-flexvolume-dir") pod "kube-controller-manager-master-centos" (UID: "f06e225304582a2f1f513dc7146b9453")
+Nov 04 02:58:42 master-centos kubelet[4578]: E1104 02:58:42.778051    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:42 master-centos kubelet[4578]: E1104 02:58:42.878292    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:42 master-centos kubelet[4578]: E1104 02:58:42.980994    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:42 master-centos kubelet[4578]: I1104 02:58:42.997303    4578 kubelet_node_status.go:276] Setting node annotation to enable volume controller attach/detach
+Nov 04 02:58:43 master-centos kubelet[4578]: I1104 02:58:43.001790    4578 kubelet_node_status.go:70] Attempting to register node master-centos
+Nov 04 02:58:43 master-centos kubelet[4578]: E1104 02:58:43.002154    4578 kubelet_node_status.go:92] Unable to register node "master-centos" with API server: Post https://10.142.0.2:6443/api/v1/nodes: dial tcp 10.142.0.2:6443: connect: connection refused
+Nov 04 02:58:43 master-centos kubelet[4578]: E1104 02:58:43.081627    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:43 master-centos kubelet[4578]: E1104 02:58:43.158646    4578 reflector.go:134] k8s.io/kubernetes/pkg/kubelet/config/apiserver.go:47: Failed to list *v1.Pod: Get https://10.142.0.2:6443/api/v1/pods?fieldSelector=spec.nodeName%3Dmaster-centos&limit=500&resourceVersion=0: dial tcp 10.142.0.2:6443: connect: connection refused
+Nov 04 02:58:43 master-centos kubelet[4578]: E1104 02:58:43.158711    4578 reflector.go:134] k8s.io/kubernetes/pkg/kubelet/kubelet.go:442: Failed to list *v1.Service: Get https://10.142.0.2:6443/api/v1/services?limit=500&resourceVersion=0: dial tcp 10.142.0.2:6443: connect: connection refused
+Nov 04 02:58:43 master-centos kubelet[4578]: E1104 02:58:43.159384    4578 reflector.go:134] k8s.io/kubernetes/pkg/kubelet/kubelet.go:451: Failed to list *v1.Node: Get https://10.142.0.2:6443/api/v1/nodes?fieldSelector=metadata.name%3Dmaster-centos&limit=500&resourceVersion=0: dial tcp 10.142.0.2:6443: connect: connection refused
+Nov 04 02:58:43 master-centos kubelet[4578]: E1104 02:58:43.185405    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:43 master-centos kubelet[4578]: E1104 02:58:43.286280    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:43 master-centos kubelet[4578]: E1104 02:58:43.402712    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:43 master-centos kubelet[4578]: W1104 02:58:43.469445    4578 docker_container.go:202] Deleted previously existing symlink file: "/var/log/pods/ee7b1077c61516320f4273309e9b4690/kube-scheduler/0.log"
+Nov 04 02:58:43 master-centos kubelet[4578]: W1104 02:58:43.491766    4578 docker_container.go:202] Deleted previously existing symlink file: "/var/log/pods/48889bdd121b4da9b8018bda503e06dc/etcd/0.log"
+Nov 04 02:58:43 master-centos kubelet[4578]: E1104 02:58:43.522761    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:43 master-centos kubelet[4578]: W1104 02:58:43.594465    4578 docker_container.go:202] Deleted previously existing symlink file: "/var/log/pods/71d816856ea6e920781f7edf59100b9d/kube-apiserver/0.log"
+Nov 04 02:58:43 master-centos kubelet[4578]: E1104 02:58:43.650296    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:43 master-centos kubelet[4578]: I1104 02:58:43.663191    4578 kubelet_node_status.go:276] Setting node annotation to enable volume controller attach/detach
+Nov 04 02:58:43 master-centos kubelet[4578]: W1104 02:58:43.677291    4578 status_manager.go:485] Failed to get status for pod "kube-apiserver-master-centos_kube-system(71d816856ea6e920781f7edf59100b9d)": Get https://10.142.0.2:6443/api/v1/namespaces/kube-system/pods/kube-apiserver-master-centos: dial tcp 10.142.0.2:6443: connect: connection refused
+Nov 04 02:58:43 master-centos kubelet[4578]: I1104 02:58:43.699322    4578 kubelet_node_status.go:276] Setting node annotation to enable volume controller attach/detach
+Nov 04 02:58:43 master-centos kubelet[4578]: I1104 02:58:43.749531    4578 kubelet_node_status.go:276] Setting node annotation to enable volume controller attach/detach
+Nov 04 02:58:43 master-centos kubelet[4578]: E1104 02:58:43.753619    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:43 master-centos kubelet[4578]: I1104 02:58:43.803431    4578 kubelet_node_status.go:276] Setting node annotation to enable volume controller attach/detach
+Nov 04 02:58:43 master-centos kubelet[4578]: I1104 02:58:43.806215    4578 kubelet_node_status.go:70] Attempting to register node master-centos
+Nov 04 02:58:43 master-centos kubelet[4578]: E1104 02:58:43.854439    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:43 master-centos kubelet[4578]: E1104 02:58:43.958459    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:44 master-centos kubelet[4578]: E1104 02:58:44.060399    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:44 master-centos kubelet[4578]: E1104 02:58:44.163415    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:44 master-centos kubelet[4578]: E1104 02:58:44.266507    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:44 master-centos kubelet[4578]: E1104 02:58:44.368636    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:44 master-centos kubelet[4578]: E1104 02:58:44.469445    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:44 master-centos kubelet[4578]: E1104 02:58:44.575657    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:44 master-centos kubelet[4578]: E1104 02:58:44.677452    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:44 master-centos kubelet[4578]: E1104 02:58:44.779453    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:44 master-centos kubelet[4578]: I1104 02:58:44.810339    4578 kubelet_node_status.go:276] Setting node annotation to enable volume controller attach/detach
+Nov 04 02:58:44 master-centos kubelet[4578]: I1104 02:58:44.820004    4578 kubelet_node_status.go:276] Setting node annotation to enable volume controller attach/detach
+Nov 04 02:58:44 master-centos kubelet[4578]: I1104 02:58:44.844612    4578 kubelet_node_status.go:276] Setting node annotation to enable volume controller attach/detach
+Nov 04 02:58:44 master-centos kubelet[4578]: I1104 02:58:44.852598    4578 kubelet_node_status.go:276] Setting node annotation to enable volume controller attach/detach
+Nov 04 02:58:44 master-centos kubelet[4578]: E1104 02:58:44.881504    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:44 master-centos kubelet[4578]: E1104 02:58:44.988439    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:45 master-centos kubelet[4578]: E1104 02:58:45.097445    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:45 master-centos kubelet[4578]: E1104 02:58:45.207410    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:45 master-centos kubelet[4578]: E1104 02:58:45.311461    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:45 master-centos kubelet[4578]: E1104 02:58:45.414406    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:45 master-centos kubelet[4578]: E1104 02:58:45.515445    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:45 master-centos kubelet[4578]: E1104 02:58:45.615685    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:45 master-centos kubelet[4578]: E1104 02:58:45.715932    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:45 master-centos kubelet[4578]: E1104 02:58:45.816261    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:45 master-centos kubelet[4578]: I1104 02:58:45.857674    4578 kubelet_node_status.go:276] Setting node annotation to enable volume controller attach/detach
+Nov 04 02:58:45 master-centos kubelet[4578]: E1104 02:58:45.916503    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:46 master-centos kubelet[4578]: E1104 02:58:46.016752    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:46 master-centos kubelet[4578]: E1104 02:58:46.117169    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:46 master-centos kubelet[4578]: E1104 02:58:46.217361    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:46 master-centos kubelet[4578]: E1104 02:58:46.318058    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:46 master-centos kubelet[4578]: E1104 02:58:46.419504    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:46 master-centos kubelet[4578]: E1104 02:58:46.520501    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:46 master-centos kubelet[4578]: E1104 02:58:46.621436    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:46 master-centos kubelet[4578]: E1104 02:58:46.721613    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:46 master-centos kubelet[4578]: E1104 02:58:46.821895    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:46 master-centos kubelet[4578]: E1104 02:58:46.922480    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:47 master-centos kubelet[4578]: E1104 02:58:47.022701    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:47 master-centos kubelet[4578]: E1104 02:58:47.122860    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:47 master-centos kubelet[4578]: E1104 02:58:47.223105    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:47 master-centos kubelet[4578]: E1104 02:58:47.323235    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:47 master-centos kubelet[4578]: E1104 02:58:47.423527    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:47 master-centos kubelet[4578]: W1104 02:58:47.429929    4578 cni.go:188] Unable to update cni config: No networks found in /etc/cni/net.d
+Nov 04 02:58:47 master-centos kubelet[4578]: E1104 02:58:47.430269    4578 kubelet.go:2167] Container runtime network not ready: NetworkReady=false reason:NetworkPluginNotReady message:docker: network plugin is not ready: cni config uninitialized
+Nov 04 02:58:47 master-centos kubelet[4578]: E1104 02:58:47.527502    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:47 master-centos kubelet[4578]: E1104 02:58:47.627739    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:47 master-centos kubelet[4578]: E1104 02:58:47.727869    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:47 master-centos kubelet[4578]: E1104 02:58:47.828179    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:47 master-centos kubelet[4578]: E1104 02:58:47.928509    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:48 master-centos kubelet[4578]: E1104 02:58:48.028723    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:48 master-centos kubelet[4578]: E1104 02:58:48.128966    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:48 master-centos kubelet[4578]: E1104 02:58:48.229188    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:48 master-centos kubelet[4578]: E1104 02:58:48.329330    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:48 master-centos kubelet[4578]: E1104 02:58:48.430443    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:48 master-centos kubelet[4578]: E1104 02:58:48.530640    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:48 master-centos kubelet[4578]: E1104 02:58:48.631510    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:48 master-centos kubelet[4578]: E1104 02:58:48.731659    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:48 master-centos kubelet[4578]: E1104 02:58:48.834546    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:48 master-centos kubelet[4578]: E1104 02:58:48.934742    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:49 master-centos kubelet[4578]: E1104 02:58:49.038452    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:49 master-centos kubelet[4578]: E1104 02:58:49.138708    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:49 master-centos kubelet[4578]: E1104 02:58:49.238834    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:49 master-centos kubelet[4578]: E1104 02:58:49.339124    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:49 master-centos kubelet[4578]: E1104 02:58:49.439476    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:49 master-centos kubelet[4578]: E1104 02:58:49.539769    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:49 master-centos kubelet[4578]: E1104 02:58:49.639980    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:49 master-centos kubelet[4578]: E1104 02:58:49.743463    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:49 master-centos kubelet[4578]: E1104 02:58:49.843787    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:49 master-centos kubelet[4578]: E1104 02:58:49.943972    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:50 master-centos kubelet[4578]: E1104 02:58:50.044127    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:50 master-centos kubelet[4578]: E1104 02:58:50.144406    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:50 master-centos kubelet[4578]: E1104 02:58:50.244551    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:50 master-centos kubelet[4578]: E1104 02:58:50.348456    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:50 master-centos kubelet[4578]: E1104 02:58:50.448633    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:50 master-centos kubelet[4578]: E1104 02:58:50.548886    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:50 master-centos kubelet[4578]: E1104 02:58:50.649153    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:50 master-centos kubelet[4578]: E1104 02:58:50.749400    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:50 master-centos kubelet[4578]: E1104 02:58:50.849580    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:50 master-centos kubelet[4578]: E1104 02:58:50.949848    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:51 master-centos kubelet[4578]: E1104 02:58:51.050018    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:51 master-centos kubelet[4578]: E1104 02:58:51.150288    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:51 master-centos kubelet[4578]: E1104 02:58:51.250442    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:51 master-centos kubelet[4578]: E1104 02:58:51.350716    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:51 master-centos kubelet[4578]: E1104 02:58:51.450850    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:51 master-centos kubelet[4578]: E1104 02:58:51.551078    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:51 master-centos kubelet[4578]: E1104 02:58:51.651519    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:51 master-centos kubelet[4578]: E1104 02:58:51.751667    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:51 master-centos kubelet[4578]: E1104 02:58:51.851961    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:51 master-centos kubelet[4578]: E1104 02:58:51.952123    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:52 master-centos kubelet[4578]: E1104 02:58:52.052405    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:52 master-centos kubelet[4578]: E1104 02:58:52.152596    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:52 master-centos kubelet[4578]: E1104 02:58:52.252883    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:52 master-centos kubelet[4578]: E1104 02:58:52.353174    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:52 master-centos kubelet[4578]: E1104 02:58:52.428815    4578 eviction_manager.go:243] eviction manager: failed to get get summary stats: failed to get node info: node "master-centos" not found
+Nov 04 02:58:52 master-centos kubelet[4578]: W1104 02:58:52.431447    4578 cni.go:188] Unable to update cni config: No networks found in /etc/cni/net.d
+Nov 04 02:58:52 master-centos kubelet[4578]: E1104 02:58:52.431573    4578 kubelet.go:2167] Container runtime network not ready: NetworkReady=false reason:NetworkPluginNotReady message:docker: network plugin is not ready: cni config uninitialized
+Nov 04 02:58:52 master-centos kubelet[4578]: E1104 02:58:52.453310    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:52 master-centos kubelet[4578]: E1104 02:58:52.553574    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:52 master-centos kubelet[4578]: E1104 02:58:52.654439    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:52 master-centos kubelet[4578]: E1104 02:58:52.754667    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:52 master-centos kubelet[4578]: E1104 02:58:52.854964    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:52 master-centos kubelet[4578]: E1104 02:58:52.955126    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:53 master-centos kubelet[4578]: E1104 02:58:53.056480    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:53 master-centos kubelet[4578]: E1104 02:58:53.156699    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:53 master-centos kubelet[4578]: E1104 02:58:53.256923    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:53 master-centos kubelet[4578]: E1104 02:58:53.357064    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:53 master-centos kubelet[4578]: E1104 02:58:53.457292    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:53 master-centos kubelet[4578]: E1104 02:58:53.557460    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:53 master-centos kubelet[4578]: E1104 02:58:53.660518    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:53 master-centos kubelet[4578]: W1104 02:58:53.745962    4578 status_manager.go:485] Failed to get status for pod "etcd-master-centos_kube-system(48889bdd121b4da9b8018bda503e06dc)": Get https://10.142.0.2:6443/api/v1/namespaces/kube-system/pods/etcd-master-centos: net/http: TLS handshake timeout
+Nov 04 02:58:53 master-centos kubelet[4578]: E1104 02:58:53.760650    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:53 master-centos kubelet[4578]: E1104 02:58:53.806930    4578 kubelet_node_status.go:92] Unable to register node "master-centos" with API server: Post https://10.142.0.2:6443/api/v1/nodes: net/http: TLS handshake timeout
+Nov 04 02:58:53 master-centos kubelet[4578]: E1104 02:58:53.814048    4578 event.go:212] Unable to write event: 'Post https://10.142.0.2:6443/api/v1/namespaces/default/events: net/http: TLS handshake timeout' (may retry after sleeping)
+Nov 04 02:58:53 master-centos kubelet[4578]: E1104 02:58:53.860945    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:53 master-centos kubelet[4578]: E1104 02:58:53.961101    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:54 master-centos kubelet[4578]: E1104 02:58:54.061306    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:54 master-centos kubelet[4578]: E1104 02:58:54.161686    4578 reflector.go:134] k8s.io/kubernetes/pkg/kubelet/config/apiserver.go:47: Failed to list *v1.Pod: Get https://10.142.0.2:6443/api/v1/pods?fieldSelector=spec.nodeName%3Dmaster-centos&limit=500&resourceVersion=0: net/http: TLS handshake timeout
+Nov 04 02:58:54 master-centos kubelet[4578]: E1104 02:58:54.161724    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:54 master-centos kubelet[4578]: E1104 02:58:54.176719    4578 reflector.go:134] k8s.io/kubernetes/pkg/kubelet/kubelet.go:451: Failed to list *v1.Node: Get https://10.142.0.2:6443/api/v1/nodes?fieldSelector=metadata.name%3Dmaster-centos&limit=500&resourceVersion=0: net/http: TLS handshake timeout
+Nov 04 02:58:54 master-centos kubelet[4578]: E1104 02:58:54.176829    4578 reflector.go:134] k8s.io/kubernetes/pkg/kubelet/kubelet.go:442: Failed to list *v1.Service: Get https://10.142.0.2:6443/api/v1/services?limit=500&resourceVersion=0: net/http: TLS handshake timeout
+Nov 04 02:58:54 master-centos kubelet[4578]: E1104 02:58:54.261808    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:54 master-centos kubelet[4578]: E1104 02:58:54.328306    4578 certificate_manager.go:348] Failed while requesting a signed certificate from the master: cannot create certificate signing request: Post https://10.142.0.2:6443/apis/certificates.k8s.io/v1beta1/certificatesigningrequests: net/http: TLS handshake timeout
+Nov 04 02:58:54 master-centos kubelet[4578]: E1104 02:58:54.361938    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:54 master-centos kubelet[4578]: E1104 02:58:54.462100    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:54 master-centos kubelet[4578]: E1104 02:58:54.565438    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:54 master-centos kubelet[4578]: E1104 02:58:54.673715    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:54 master-centos kubelet[4578]: E1104 02:58:54.774028    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:54 master-centos kubelet[4578]: E1104 02:58:54.874242    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:54 master-centos kubelet[4578]: E1104 02:58:54.974431    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:55 master-centos kubelet[4578]: E1104 02:58:55.074614    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:55 master-centos kubelet[4578]: E1104 02:58:55.174808    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:55 master-centos kubelet[4578]: E1104 02:58:55.274978    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:55 master-centos kubelet[4578]: I1104 02:58:55.275030    4578 reconciler.go:154] Reconciler: start to sync state
+Nov 04 02:58:55 master-centos kubelet[4578]: E1104 02:58:55.375232    4578 kubelet.go:2236] node "master-centos" not found
+Nov 04 02:58:55 master-centos kubelet[4578]: I1104 02:58:55.407152    4578 kubelet_node_status.go:276] Setting node annotation to enable volume controller attach/detach
+Nov 04 02:58:55 master-centos kubelet[4578]: I1104 02:58:55.409945    4578 kubelet_node_status.go:70] Attempting to register node master-centos
+Nov 04 02:58:55 master-centos kubelet[4578]: I1104 02:58:55.420581    4578 kubelet_node_status.go:73] Successfully registered node master-centos
+Nov 04 02:58:56 master-centos kubelet[4578]: W1104 02:58:56.285689    4578 kubelet_getters.go:264] Path "/var/lib/kubelet/pods/0e9fb516-dfda-11e8-94a3-42010a8e0002/volumes" does not exist
+Nov 04 02:58:56 master-centos kubelet[4578]: W1104 02:58:56.285726    4578 kubelet_getters.go:264] Path "/var/lib/kubelet/pods/e41fe43b-dfd9-11e8-94a3-42010a8e0002/volumes" does not exist
+Nov 04 02:58:56 master-centos kubelet[4578]: W1104 02:58:56.285742    4578 kubelet_getters.go:264] Path "/var/lib/kubelet/pods/309ba8fd17cb0652a8f90e12725f1edc/volumes" does not exist
+Nov 04 02:58:56 master-centos kubelet[4578]: W1104 02:58:56.285759    4578 kubelet_getters.go:264] Path "/var/lib/kubelet/pods/950c1401-dfdb-11e8-94a3-42010a8e0002/volumes" does not exist
+Nov 04 02:58:57 master-centos kubelet[4578]: W1104 02:58:57.433621    4578 cni.go:188] Unable to update cni config: No networks found in /etc/cni/net.d
+Nov 04 02:58:57 master-centos kubelet[4578]: E1104 02:58:57.433761    4578 kubelet.go:2167] Container runtime network not ready: NetworkReady=false reason:NetworkPluginNotReady message:docker: network plugin is not ready: cni config uninitialized
+Nov 04 02:59:02 master-centos kubelet[4578]: W1104 02:59:02.437949    4578 cni.go:188] Unable to update cni config: No networks found in /etc/cni/net.d
+Nov 04 02:59:02 master-centos kubelet[4578]: E1104 02:59:02.438088    4578 kubelet.go:2167] Container runtime network not ready: NetworkReady=false reason:NetworkPluginNotReady message:docker: network plugin is not ready: cni config uninitialized
+Nov 04 02:59:07 master-centos kubelet[4578]: W1104 02:59:07.439414    4578 cni.go:188] Unable to update cni config: No networks found in /etc/cni/net.d
+Nov 04 02:59:07 master-centos kubelet[4578]: E1104 02:59:07.439957    4578 kubelet.go:2167] Container runtime network not ready: NetworkReady=false reason:NetworkPluginNotReady message:docker: network plugin is not ready: cni config uninitialized
+Nov 04 02:59:12 master-centos kubelet[4578]: W1104 02:59:12.441396    4578 cni.go:188] Unable to update cni config: No networks found in /etc/cni/net.d
+Nov 04 02:59:12 master-centos kubelet[4578]: E1104 02:59:12.441566    4578 kubelet.go:2167] Container runtime network not ready: NetworkReady=false reason:NetworkPluginNotReady message:docker: network plugin is not ready: cni config uninitialized
+Nov 04 02:59:13 master-centos kubelet[4578]: I1104 02:59:13.115977    4578 kuberuntime_manager.go:910] updating runtime config through cri with podcidr 10.244.0.0/24
+Nov 04 02:59:13 master-centos kubelet[4578]: I1104 02:59:13.116284    4578 docker_service.go:345] docker cri received runtime config &RuntimeConfig{NetworkConfig:&NetworkConfig{PodCidr:10.244.0.0/24,},}
+Nov 04 02:59:13 master-centos kubelet[4578]: I1104 02:59:13.116469    4578 kubelet_network.go:75] Setting Pod CIDR:  -> 10.244.0.0/24
+Nov 04 02:59:13 master-centos kubelet[4578]: W1104 02:59:13.117984    4578 cni.go:188] Unable to update cni config: No networks found in /etc/cni/net.d
+Nov 04 02:59:13 master-centos kubelet[4578]: E1104 02:59:13.118523    4578 kubelet.go:2167] Container runtime network not ready: NetworkReady=false reason:NetworkPluginNotReady message:docker: network plugin is not ready: cni config uninitialized
+Nov 04 02:59:13 master-centos kubelet[4578]: I1104 02:59:13.320014    4578 reconciler.go:207] operationExecutor.VerifyControllerAttachedVolume started for volume "kube-proxy" (UniqueName: "kubernetes.io/configmap/9bec90ac-dfdd-11e8-b71c-42010a8e0002-kube-proxy") pod "kube-proxy-xbsf8" (UID: "9bec90ac-dfdd-11e8-b71c-42010a8e0002")
+Nov 04 02:59:13 master-centos kubelet[4578]: I1104 02:59:13.320080    4578 reconciler.go:207] operationExecutor.VerifyControllerAttachedVolume started for volume "lib-modules" (UniqueName: "kubernetes.io/host-path/9bec90ac-dfdd-11e8-b71c-42010a8e0002-lib-modules") pod "kube-proxy-xbsf8" (UID: "9bec90ac-dfdd-11e8-b71c-42010a8e0002")
+Nov 04 02:59:13 master-centos kubelet[4578]: I1104 02:59:13.320114    4578 reconciler.go:207] operationExecutor.VerifyControllerAttachedVolume started for volume "kube-proxy-token-njjkg" (UniqueName: "kubernetes.io/secret/9bec90ac-dfdd-11e8-b71c-42010a8e0002-kube-proxy-token-njjkg") pod "kube-proxy-xbsf8" (UID: "9bec90ac-dfdd-11e8-b71c-42010a8e0002")
+Nov 04 02:59:13 master-centos kubelet[4578]: I1104 02:59:13.320140    4578 reconciler.go:207] operationExecutor.VerifyControllerAttachedVolume started for volume "xtables-lock" (UniqueName: "kubernetes.io/host-path/9bec90ac-dfdd-11e8-b71c-42010a8e0002-xtables-lock") pod "kube-proxy-xbsf8" (UID: "9bec90ac-dfdd-11e8-b71c-42010a8e0002")
+Nov 04 02:59:17 master-centos kubelet[4578]: W1104 02:59:17.443021    4578 cni.go:188] Unable to update cni config: No networks found in /etc/cni/net.d
+Nov 04 02:59:17 master-centos kubelet[4578]: E1104 02:59:17.443145    4578 kubelet.go:2167] Container runtime network not ready: NetworkReady=false reason:NetworkPluginNotReady message:docker: network plugin is not ready: cni config uninitialized
+Nov 04 02:59:22 master-centos kubelet[4578]: I1104 02:59:22.104507    4578 transport.go:132] certificate rotation detected, shutting down client connections to start using new credentials
+Nov 04 02:59:22 master-centos kubelet[4578]: W1104 02:59:22.444693    4578 cni.go:188] Unable to update cni config: No networks found in /etc/cni/net.d
+Nov 04 02:59:22 master-centos kubelet[4578]: E1104 02:59:22.445304    4578 kubelet.go:2167] Container runtime network not ready: NetworkReady=false reason:NetworkPluginNotReady message:docker: network plugin is not ready: cni config uninitialized
+Nov 04 02:59:25 master-centos kubelet[4578]: E1104 02:59:25.097029    4578 reflector.go:134] object-"kube-system"/"flannel-token-nhpq6": Failed to list *v1.Secret: secrets "flannel-token-nhpq6" is forbidden: User "system:node:master-centos" cannot list resource "secrets" in API group "" in the namespace "kube-system"
+Nov 04 02:59:25 master-centos kubelet[4578]: I1104 02:59:25.260387    4578 reconciler.go:207] operationExecutor.VerifyControllerAttachedVolume started for volume "run" (UniqueName: "kubernetes.io/host-path/a307aa71-dfdd-11e8-b71c-42010a8e0002-run") pod "kube-flannel-ds-amd64-7skp2" (UID: "a307aa71-dfdd-11e8-b71c-42010a8e0002")
+Nov 04 02:59:25 master-centos kubelet[4578]: I1104 02:59:25.260444    4578 reconciler.go:207] operationExecutor.VerifyControllerAttachedVolume started for volume "flannel-token-nhpq6" (UniqueName: "kubernetes.io/secret/a307aa71-dfdd-11e8-b71c-42010a8e0002-flannel-token-nhpq6") pod "kube-flannel-ds-amd64-7skp2" (UID: "a307aa71-dfdd-11e8-b71c-42010a8e0002")
+Nov 04 02:59:25 master-centos kubelet[4578]: I1104 02:59:25.260467    4578 reconciler.go:207] operationExecutor.VerifyControllerAttachedVolume started for volume "cni" (UniqueName: "kubernetes.io/host-path/a307aa71-dfdd-11e8-b71c-42010a8e0002-cni") pod "kube-flannel-ds-amd64-7skp2" (UID: "a307aa71-dfdd-11e8-b71c-42010a8e0002")
+Nov 04 02:59:25 master-centos kubelet[4578]: I1104 02:59:25.260490    4578 reconciler.go:207] operationExecutor.VerifyControllerAttachedVolume started for volume "flannel-cfg" (UniqueName: "kubernetes.io/configmap/a307aa71-dfdd-11e8-b71c-42010a8e0002-flannel-cfg") pod "kube-flannel-ds-amd64-7skp2" (UID: "a307aa71-dfdd-11e8-b71c-42010a8e0002")
+Nov 04 02:59:35 master-centos kubelet[4578]: I1104 02:59:35.592733    4578 reconciler.go:207] operationExecutor.VerifyControllerAttachedVolume started for volume "coredns-token-qd8nw" (UniqueName: "kubernetes.io/secret/9bf6578f-dfdd-11e8-b71c-42010a8e0002-coredns-token-qd8nw") pod "coredns-576cbf47c7-ztqbd" (UID: "9bf6578f-dfdd-11e8-b71c-42010a8e0002")
+Nov 04 02:59:35 master-centos kubelet[4578]: I1104 02:59:35.592794    4578 reconciler.go:207] operationExecutor.VerifyControllerAttachedVolume started for volume "config-volume" (UniqueName: "kubernetes.io/configmap/9bf55914-dfdd-11e8-b71c-42010a8e0002-config-volume") pod "coredns-576cbf47c7-4wlts" (UID: "9bf55914-dfdd-11e8-b71c-42010a8e0002")
+Nov 04 02:59:35 master-centos kubelet[4578]: I1104 02:59:35.592829    4578 reconciler.go:207] operationExecutor.VerifyControllerAttachedVolume started for volume "config-volume" (UniqueName: "kubernetes.io/configmap/9bf6578f-dfdd-11e8-b71c-42010a8e0002-config-volume") pod "coredns-576cbf47c7-ztqbd" (UID: "9bf6578f-dfdd-11e8-b71c-42010a8e0002")
+Nov 04 02:59:35 master-centos kubelet[4578]: I1104 02:59:35.592856    4578 reconciler.go:207] operationExecutor.VerifyControllerAttachedVolume started for volume "coredns-token-qd8nw" (UniqueName: "kubernetes.io/secret/9bf55914-dfdd-11e8-b71c-42010a8e0002-coredns-token-qd8nw") pod "coredns-576cbf47c7-4wlts" (UID: "9bf55914-dfdd-11e8-b71c-42010a8e0002")
+Nov 04 02:59:35 master-centos kubelet[4578]: W1104 02:59:35.711659    4578 container.go:507] Failed to update stats for container "/system.slice/run-5581.scope": failed to parse memory.usage_in_bytes - read /sys/fs/cgroup/memory/system.slice/run-5581.scope/memory.usage_in_bytes: no such device, continuing to push stats
+Nov 04 02:59:36 master-centos kubelet[4578]: W1104 02:59:36.163098    4578 pod_container_deletor.go:75] Container "6709ead54e0d20d7345bacdc09a3f68b70fc63fe97c5e68068a8e430213f09fe" not found in pod's containers
+Nov 04 02:59:36 master-centos kubelet[4578]: W1104 02:59:36.191575    4578 pod_container_deletor.go:75] Container "cd123578ea19c4ae64a17afc85bb895792c22c42abfb270a204df4d5a28a39f4" not found in pod's containers
